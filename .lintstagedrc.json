@@ -1,0 +1,5 @@
+
+{
+  "package.json": ["format-package -w"],
+  "*.{js,jsx,ts,tsx}": ["eslint --fix"]
+}
