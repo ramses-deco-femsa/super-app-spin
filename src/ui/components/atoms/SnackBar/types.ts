@@ -110,8 +110,8 @@ enum SnackBarVariant {
 }
 
 export {
-  ActionSnackBar,
-  SnackBarProps,
+  type ActionSnackBar,
+  type SnackBarProps,
   SnackBarVariant,
   DEFAULT_SNACKBAR_STYLES,
   INFO_SNACKBAR_STYLES,

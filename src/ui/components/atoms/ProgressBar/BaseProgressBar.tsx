@@ -81,7 +81,7 @@ const AnimatedBar = ({
   const progressPercentage = percent.currentStep / percent.totalStep;
 
   const transformXPosition = useCallback(
-    (thePercentage) => {
+    (thePercentage: any) => {
       const newXTranslation = -(
         progressBarWidth -
         progressBarWidth * thePercentage
