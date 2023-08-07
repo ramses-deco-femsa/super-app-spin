@@ -39,7 +39,12 @@ module.exports = {
             position: 'before',
           },
           {
-            pattern: '@super-app-theme',
+            pattern: '@digitaltitransversal',
+            group: 'external',
+            position: 'after',
+          },
+          {
+            pattern: '@test-utils',
             group: 'external',
             position: 'after',
           },

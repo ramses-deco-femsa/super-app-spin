@@ -9,8 +9,8 @@ module.exports = function (api) {
         "module-resolver",
         {
           alias: {
+            '@digitaltitransversal': "./src/ui",
             '@sas': "./src",
-            '@super-app-theme': "./src/ui",
           },
         },
       ],

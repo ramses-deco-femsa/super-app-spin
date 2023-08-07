@@ -2,8 +2,8 @@ import 'react-native-gesture-handler';
 import React from 'react';
 import {SafeAreaView} from 'react-native';
 
+import {ThemeProvider} from '@digitaltitransversal';
 import {RootNavigation} from '@sas/navigation/root-navigation';
-import {ThemeProvider} from '@super-app-theme';
 
 const App = () => {
   return (
