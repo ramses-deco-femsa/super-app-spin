@@ -5,15 +5,15 @@ export enum RouteNames {
   // authenticated
   HomeScreen = 'HomeScreen',
   HomeTab = 'Home',
-  BenefitsTab = 'Benefits',
-  WalletTab = 'Wallet',
-  AccountTab = 'Account',
+  BenefitsTab = 'Beneficios',
+  WalletTab = 'Cartera',
+  AccountTab = 'Cuenta',
 
   MovementDetailScreen = 'MovementDetailScreen',
-  MovementsScreen = 'Movements',
-  MovementsListTab = 'All',
-  MovementsEarnedTab = 'Earned',
-  MovementsUsedTab = 'Used',
+  MovementsScreen = 'Movimientos',
+  MovementsListTab = 'Todos',
+  MovementsEarnedTab = 'Ganados',
+  MovementsUsedTab = 'Usados',
 }
 
 export type RootStackParamList = {
