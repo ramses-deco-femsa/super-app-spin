@@ -1,4 +1,5 @@
 import React from 'react';
+import {Platform} from 'react-native';
 
 import {createStackNavigator} from '@react-navigation/stack';
 
@@ -11,7 +12,27 @@ import {MovementsTabNavigation} from './movements-tab-navigation';
 const Stack = createStackNavigator<RootStackParamList>();
 
 export const AuthenticatedNavigation = () => (
-  <Stack.Navigator initialRouteName={RouteNames.HomeScreen}>
+  <Stack.Navigator
+    initialRouteName={RouteNames.HomeScreen}
+    screenOptions={{
+      headerLeftContainerStyle: {
+        paddingLeft: 20,
+      },
+      headerStyle: {
+        elevation: 0,
+        shadowColor: 'transparent',
+      },
+      headerBackTitle: 'Movimientos',
+      headerTitle: Platform.OS === 'ios' ? '' : 'Movimientos',
+      headerTitleStyle: {
+        left: -25,
+      },
+      headerTitleAlign: 'left',
+      headerBackTitleStyle: {
+        marginLeft: Platform.OS === 'ios' ? 12 : 0,
+      },
+      headerTintColor: 'black',
+    }}>
     <Stack.Screen
       name={RouteNames.HomeScreen}
       options={{headerShown: false}}

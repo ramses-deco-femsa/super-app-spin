@@ -12,7 +12,20 @@ import {
 const Tab = createMaterialTopTabNavigator<RootStackParamList>();
 
 export const MovementsTabNavigation = () => (
-  <Tab.Navigator initialRouteName={RouteNames.MovementsListTab}>
+  <Tab.Navigator
+    initialRouteName={RouteNames.MovementsListTab}
+    sceneContainerStyle={{
+      backgroundColor: 'white',
+    }}
+    style={{
+      paddingHorizontal: 20,
+      backgroundColor: 'white',
+    }}
+    screenOptions={{
+      tabBarStyle: {
+        elevation: 0,
+      },
+    }}>
     <Tab.Screen
       name={RouteNames.MovementsListTab}
       component={MovementsListScreen}
