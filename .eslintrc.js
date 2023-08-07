@@ -8,7 +8,6 @@ module.exports = {
     'node_modules',
     'babel.config.js',
     'metro.config.js',
-    'jest.config.js',
   ],
   settings: {
     'import/parsers': {
