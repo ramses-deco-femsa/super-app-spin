@@ -6,6 +6,9 @@ import {compilerOptions} from './tsconfig.json';
 const jestConfig: JestConfigWithTsJest = {
   ...tsjPreset,
   preset: 'react-native',
+  transformIgnorePatterns: [
+    'node_modules/(?!(jest-)?react-native|@react-native|@react-navigation|@kichiyaki/react-native-barcode-generator|jsbarcode|@gorhom)',
+  ],
   transform: {
     '^.+\\.jsx$': 'babel-jest',
     '^.+\\.tsx?$': [
@@ -20,6 +23,9 @@ const jestConfig: JestConfigWithTsJest = {
     prefix: '<rootDir>/',
   }),
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
+  fakeTimers: {
+    enableGlobally: true,
+  },
 };
 
 export default jestConfig;

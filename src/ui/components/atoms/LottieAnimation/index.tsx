@@ -1,6 +1,7 @@
 import React from 'react';
-import LottieView, { AnimationObject } from 'lottie-react-native';
+import LottieView from 'lottie-react-native';
 import type { StyleProp, ViewStyle } from 'react-native';
+import type { AnimationObject } from 'lottie-react-native/lib/typescript/LottieView.types';
 
 type LottieAnimationProps = {
   source: string | AnimationObject | { uri: string };

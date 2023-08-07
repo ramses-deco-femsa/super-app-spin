@@ -3,8 +3,9 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@sas/*": ["src/*"],
-      "@super-app-theme": ["src/ui"]
+      "@digitaltitransversal": ["src/ui"],
+      "@test-utils": ["src/utils/test-utils"],
+      "@sas/*": ["src/*"]
     }
   }
 }
