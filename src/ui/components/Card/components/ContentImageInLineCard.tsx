@@ -4,7 +4,7 @@ import BaseCard from './BaseCard';
 import useThemedStyles from '../../../hooks/useThemedStyles';
 import type { BaseCardProps } from '../types';
 import Text from '../../../components/Text/Text';
-import type { ThemeContextType } from '../../../../src/theme/types';
+import type { ThemeContextType } from '../../../theme/types';
 import Tag from '../../atoms/Tag/index';
 import Icon from '../../atoms/Icon/Icon';
 

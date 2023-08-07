@@ -11,6 +11,7 @@ function ContentIconCard(props: BaseCardProps) {
   return (
     <BaseCard {...props} style={themedStyle.card}>
       <View style={themedStyle.contentView}>
+        <>
         {props.image && props.image}
         <Text variant="small-body-bold" numberOfLines={1}>
           {props.title}
@@ -20,6 +21,7 @@ function ContentIconCard(props: BaseCardProps) {
             {props.subtitle}
           </Text>
         )}
+        </>
       </View>
     </BaseCard>
   );
