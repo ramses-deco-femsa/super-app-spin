@@ -39,6 +39,16 @@ module.exports = {
             group: 'external',
             position: 'before',
           },
+          {
+            pattern: '@super-app-theme',
+            group: 'external',
+            position: 'after',
+          },
+          {
+            pattern: '@sas/**',
+            group: 'internal',
+            position: 'before',
+          },
         ],
         pathGroupsExcludedImportTypes: ['internal', 'react'],
         'newlines-between': 'always',
