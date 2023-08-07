@@ -1,8 +1,7 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import {SafeAreaView} from 'react-native';
-import ThemeProvider from './src/theme/ThemeProvider';
-import {Button} from './src';
+import {Button, ThemeProvider} from './src/ui';
 
 const App = () => {
   return (
