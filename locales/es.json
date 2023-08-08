@@ -1,4 +1,11 @@
 {
   "change-language": "en",
-  "welcome": "Bienvenido a spin"
+  "welcome": "Bienvenido a spin",
+  "benefits": "Beneficios",
+  "check": "Consulta",
+  "yourHistory": "tu historial",
+  "changePoints": "Cambia tus puntos",
+  "youHave": "Tienes",
+  "score": "Valen",
+  "points": "Puntos"
 }
