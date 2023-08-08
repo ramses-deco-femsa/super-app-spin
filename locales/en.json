@@ -9,6 +9,11 @@
   "score": "Score",
   "points": "Points",
   "movements": {
+    "tabs": {
+      "all": "all",
+      "earned": "earned",
+      "used": "used"
+    },
     "list": {
       "today": "Today",
       "yesterday": "Yesterday",

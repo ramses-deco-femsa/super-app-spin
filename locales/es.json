@@ -9,6 +9,11 @@
   "score": "Valen",
   "points": "Puntos",
   "movements": {
+    "tabs": {
+      "all": "Todos",
+      "earned": "Ganados",
+      "used": "Usados"
+    },
     "list": {
       "today": "Hoy",
       "yesterday": "Ayer",
