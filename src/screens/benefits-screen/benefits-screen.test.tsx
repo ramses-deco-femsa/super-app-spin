@@ -9,6 +9,6 @@ describe('<BenefitsScreen />', () => {
   it('should render BenefitsScreen', () => {
     // TODO: improve props passing data
     render(<BenefitsScreen {...({} as BenefitsScreenProps)} />);
-    expect(screen.getByText(/BenefitsScreen/i)).toBeDefined();
+    expect(screen.getByText(/BenefitssScreen/i)).toBeDefined();
   });
 });

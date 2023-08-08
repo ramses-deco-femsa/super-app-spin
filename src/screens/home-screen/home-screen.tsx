@@ -8,7 +8,7 @@ import {RootStackParamList} from '@sas/navigation/navigation.types';
 
 export type HomeScreenProps = BottomTabScreenProps<RootStackParamList>;
 
-export const HomeScreen = () => (
+export const HomeScreen = (_props: HomeScreenProps) => (
   <MainContainer>
     <View>
       <Text>HomeScreen</Text>
