@@ -11,7 +11,15 @@ import {
 describe('<MovementsListScreen />', () => {
   it('should render MovementsListScreen', () => {
     // TODO: improve props passing data
-    render(<MovementsListScreen {...({} as MovementsListScreenProps)} />);
+    render(<MovementsListScreen {...({} as MovementsListScreenProps)} />, {
+      contextState: {
+        movements: {
+          data: [],
+          loading: false,
+        },
+        getMovements: jest.fn(),
+      },
+    });
     expect(screen.getByText(/MovementsListScreen/i)).toBeDefined();
   });
 });

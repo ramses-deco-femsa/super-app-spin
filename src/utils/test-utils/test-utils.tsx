@@ -3,23 +3,29 @@ import React, {ReactNode} from 'react';
 import {RenderOptions, render} from '@testing-library/react-native';
 
 import {ThemeProvider} from '@digitaltitransversal';
-import {AppProvider} from '@sas/context';
+import {AppProvider, AppContext} from '@sas/context';
 
 type AllTheProvidersProps = {
   children: ReactNode;
+  contextState: Partial<AppContext>;
 };
 
-const AllTheProviders = ({children}: AllTheProvidersProps) => {
+const AllTheProviders = ({children, contextState}: AllTheProvidersProps) => {
   return (
     <ThemeProvider>
-      <AppProvider>{children}</AppProvider>
+      <AppProvider initialValue={contextState}>{children}</AppProvider>
     </ThemeProvider>
   );
 };
 
-const customRender = (ui: React.ReactElement, options?: RenderOptions) =>
+const customRender = (
+  ui: React.ReactElement,
+  options?: RenderOptions & Pick<AllTheProvidersProps, 'contextState'>,
+) =>
   render(ui, {
-    wrapper: props => <AllTheProviders {...props} />,
+    wrapper: props => (
+      <AllTheProviders {...props} contextState={options?.contextState} />
+    ),
     ...options,
   });
 

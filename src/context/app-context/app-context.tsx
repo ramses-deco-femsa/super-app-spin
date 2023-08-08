@@ -7,13 +7,16 @@ type AppContextActions = {
   getMovements: () => Promise<void>;
 };
 
-type AppContext = AppState & AppContextActions;
+export type AppContext = AppState & AppContextActions;
 
-export const appContext = createContext<AppContext>(
-  null as unknown as AppContext,
-);
+const appContext = createContext<AppContext>(null as unknown as AppContext);
 
-export const AppProvider = ({children}: {children: ReactNode}) => {
+type AppProviderProps = {
+  children: ReactNode;
+  initialValue?: Partial<AppContext>;
+};
+
+export const AppProvider = ({children, initialValue}: AppProviderProps) => {
   const [state, dispatch] = useReducer(appReducer, appInitialState);
 
   const actions: AppContextActions = {
@@ -25,6 +28,7 @@ export const AppProvider = ({children}: {children: ReactNode}) => {
       value={{
         ...state,
         ...actions,
+        ...initialValue,
       }}>
       {children}
     </appContext.Provider>
