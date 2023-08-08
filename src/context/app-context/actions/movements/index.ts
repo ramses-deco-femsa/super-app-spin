@@ -1,2 +1,2 @@
 export * from './movements-types';
-export * from './set-movements';
+export * from './get-movements';

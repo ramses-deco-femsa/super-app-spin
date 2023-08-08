@@ -1,6 +1,6 @@
 import React, {ReactNode, createContext, useContext, useReducer} from 'react';
 
-import {Types} from './actions';
+import {getMovements} from './actions';
 import {appReducer, appInitialState, AppState} from './reducer';
 
 type AppContextActions = {
@@ -17,10 +17,7 @@ export const AppProvider = ({children}: {children: ReactNode}) => {
   const [state, dispatch] = useReducer(appReducer, appInitialState);
 
   const actions: AppContextActions = {
-    getMovements: async () => {
-      // TODO: add real action
-      dispatch({type: Types.SET_MOVEMENTS, payload: {movements: []}});
-    },
+    getMovements: async () => getMovements(dispatch),
   };
 
   return (
