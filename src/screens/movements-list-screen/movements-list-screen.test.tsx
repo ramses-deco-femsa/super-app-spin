@@ -1,4 +1,3 @@
-import 'react-native';
 import React from 'react';
 
 import {render, screen} from '@test-utils';
@@ -20,6 +19,6 @@ describe('<MovementsListScreen />', () => {
         getMovements: jest.fn(),
       },
     });
-    expect(screen.getByText(/MovementsListScreen/i)).toBeDefined();
+    expect(screen.getByText(/0/i)).toBeDefined();
   });
 });

@@ -13,7 +13,7 @@ export type AppState = {
 export const appInitialState: AppState = {
   movements: {
     data: [],
-    loading: true,
+    loading: false,
     error: undefined,
   },
 };

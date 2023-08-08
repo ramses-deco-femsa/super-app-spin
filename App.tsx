@@ -4,7 +4,7 @@ import {SafeAreaView} from 'react-native';
 
 import {I18nextProvider} from 'react-i18next';
 
-import {ThemeProvider} from '@digitaltitransversal';
+import {ThemeProvider, Alert} from '@digitaltitransversal';
 import {AppProvider} from '@sas/context';
 import {RootNavigation} from '@sas/navigation/root-navigation';
 
@@ -15,6 +15,7 @@ const App = () => {
     <ThemeProvider>
       <SafeAreaView style={{flex: 1}}>
         <I18nextProvider i18n={i18n}>
+          <Alert.Component />
           <AppProvider>
             <RootNavigation />
           </AppProvider>
