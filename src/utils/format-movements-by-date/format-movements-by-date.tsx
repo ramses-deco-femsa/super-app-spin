@@ -81,15 +81,16 @@ export const formatMovementsByDate = (
   }
 
   const uniqueMonths = [
-    ...new Set(data.map(item => formatMonthYear(item.date))),
+    ...new Set(data.map(({date}) => ({month: formatMonthYear(date), date}))),
   ];
 
-  uniqueMonths.forEach(month => {
+  uniqueMonths.forEach(({month, date}) => {
     const monthData = data.filter(item => formatMonthYear(item.date) === month);
     if (monthData.length > 0) {
-      const monthLong = formatMonth(month) as keyof typeof translations;
+      const monthName = formatMonth(date) as keyof typeof translations;
+
       filteredData.push({
-        title: translations[monthLong],
+        title: translations[monthName],
         data: monthData,
       });
     }
