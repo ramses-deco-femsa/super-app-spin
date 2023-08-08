@@ -5,7 +5,7 @@ export const MOVEMENTS_FORMATTED_DATA: MovementsFormatted[] = [
     title: 'movements.list.today',
     data: [
       {
-        entity: 'Uber',
+        entity: 'Oxxo',
         date: 'Tue Aug 08 2023',
         points: 150,
         operation: 'expended',
@@ -46,7 +46,7 @@ export const MOVEMENTS_FORMATTED_DATA: MovementsFormatted[] = [
     title: 'movements.list.may',
     data: [
       {
-        entity: 'Uber',
+        entity: 'Oxxo',
         date: 'Thu May 25 2023',
         points: 180,
         operation: 'expended',
@@ -77,7 +77,7 @@ export const MOVEMENTS_FORMATTED_DATA: MovementsFormatted[] = [
     title: 'movements.list.april',
     data: [
       {
-        entity: 'Uber',
+        entity: 'Oxxo',
         date: 'Tue Apr 18 2023',
         points: 250,
         operation: 'expended',
@@ -103,7 +103,7 @@ export const MOVEMENTS_FORMATTED_DATA: MovementsFormatted[] = [
         id: 9,
       },
       {
-        entity: 'Uber',
+        entity: 'Oxxo',
         date: 'Sun Apr 02 2023',
         points: 220,
         operation: 'expended',
@@ -134,7 +134,7 @@ export const MOVEMENTS_FORMATTED_DATA: MovementsFormatted[] = [
         id: 12,
       },
       {
-        entity: 'Uber',
+        entity: 'Oxxo',
         date: 'Fri Mar 17 2023',
         points: 120,
         operation: 'expended',
@@ -160,7 +160,7 @@ export const MOVEMENTS_FORMATTED_DATA: MovementsFormatted[] = [
         id: 15,
       },
       {
-        entity: 'Uber',
+        entity: 'Oxxo',
         date: 'Wed Mar 01 2023',
         points: 180,
         operation: 'expended',
@@ -191,7 +191,7 @@ export const MOVEMENTS_FORMATTED_DATA: MovementsFormatted[] = [
         id: 18,
       },
       {
-        entity: 'Uber',
+        entity: 'Oxxo',
         date: 'Tue Feb 14 2023',
         points: 250,
         operation: 'expended',

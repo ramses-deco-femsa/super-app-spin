@@ -2,7 +2,7 @@ import type {Movement} from '@sas/types';
 
 export const MOVEMENTS_DATA: Movement[] = [
   {
-    entity: 'Uber',
+    entity: 'Oxxo',
     date: 'Tue Aug 08 2023',
     points: 150,
     operation: 'expended',
@@ -28,7 +28,7 @@ export const MOVEMENTS_DATA: Movement[] = [
     id: 3,
   },
   {
-    entity: 'Uber',
+    entity: 'Oxxo',
     date: 'Thu May 25 2023',
     points: 180,
     operation: 'expended',
@@ -54,7 +54,7 @@ export const MOVEMENTS_DATA: Movement[] = [
     id: 6,
   },
   {
-    entity: 'Uber',
+    entity: 'Oxxo',
     date: 'Tue Apr 18 2023',
     points: 250,
     operation: 'expended',
@@ -80,7 +80,7 @@ export const MOVEMENTS_DATA: Movement[] = [
     id: 9,
   },
   {
-    entity: 'Uber',
+    entity: 'Oxxo',
     date: 'Sun Apr 02 2023',
     points: 220,
     operation: 'expended',
@@ -106,7 +106,7 @@ export const MOVEMENTS_DATA: Movement[] = [
     id: 12,
   },
   {
-    entity: 'Uber',
+    entity: 'Oxxo',
     date: 'Fri Mar 17 2023',
     points: 120,
     operation: 'expended',
@@ -132,7 +132,7 @@ export const MOVEMENTS_DATA: Movement[] = [
     id: 15,
   },
   {
-    entity: 'Uber',
+    entity: 'Oxxo',
     date: 'Wed Mar 01 2023',
     points: 180,
     operation: 'expended',
@@ -158,7 +158,7 @@ export const MOVEMENTS_DATA: Movement[] = [
     id: 18,
   },
   {
-    entity: 'Uber',
+    entity: 'Oxxo',
     date: 'Tue Feb 14 2023',
     points: 250,
     operation: 'expended',

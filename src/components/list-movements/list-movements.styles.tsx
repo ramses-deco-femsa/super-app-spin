@@ -1,9 +1,13 @@
 import {StyleSheet} from 'react-native';
 
+import {COLORS} from '@sas/theme';
+
 export const s = StyleSheet.create({
-  container: {
-    flex: 1,
-    paddingVertical: 20,
-    paddingHorizontal: 16,
+  title: {},
+  titleText: {
+    backgroundColor: '#FFF',
+    color: COLORS.content_primary,
+    fontWeight: '700',
+    padding: 16,
   },
 });

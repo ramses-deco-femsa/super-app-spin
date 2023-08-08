@@ -19,7 +19,6 @@ export const MovementsTabNavigation = () => (
       backgroundColor: 'white',
     }}
     style={{
-      paddingHorizontal: 20,
       backgroundColor: 'white',
     }}
     screenOptions={{
