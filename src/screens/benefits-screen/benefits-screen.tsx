@@ -2,23 +2,31 @@ import React from 'react';
 import {View} from 'react-native';
 
 import {BottomTabScreenProps} from '@react-navigation/bottom-tabs';
+import {useTranslation} from 'react-i18next';
 
-import {Button, Text} from '@digitaltitransversal';
-import {MainContainer} from '@sas/components';
+import {Text} from '@digitaltitransversal';
+import {CheckPoints, CtaCheckPoints, MainContainer} from '@sas/components';
 import {RootStackParamList, RouteNames} from '@sas/navigation/navigation.types';
 
 export type BenefitsScreenProps = BottomTabScreenProps<RootStackParamList>;
 
 export const BenefitsScreen = (_props: BenefitsScreenProps) => {
+  const {t} = useTranslation();
   return (
     <MainContainer>
       <View>
-        <Text>BenefitssScreen</Text>
+        <Text
+          style={{
+            fontSize: 18,
+            fontWeight: '500',
+          }}>
+          {t('benefits')}
+        </Text>
+        <CheckPoints />
+        <CtaCheckPoints
+          onPress={() => _props.navigation.navigate(RouteNames.MovementsScreen)}
+        />
       </View>
-      <Button
-        text="Consulta tu historial"
-        onPress={() => _props.navigation.navigate(RouteNames.MovementsScreen)}
-      />
     </MainContainer>
   );
 };
