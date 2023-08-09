@@ -15,6 +15,7 @@
       "used": "Usados"
     },
     "list": {
+      "empty": "Aún no hay movimientos!",
       "today": "Hoy",
       "yesterday": "Ayer",
       "last_week": "Semana Anterior",

@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, SectionList, SectionListData} from 'react-native';
+import {View, Text, SectionList, SectionListData, Image} from 'react-native';
 
 import {useNavigation} from '@react-navigation/native';
 import {Trans} from 'react-i18next';
@@ -17,13 +17,27 @@ type ListMovementsProps = {
   data: ReadonlyArray<SectionListData<Movement>>;
 };
 
+const EmptyListMovements = () => (
+  <View testID="empty-list-movements" style={s.emptyContainer}>
+    <Image
+      source={require('../../../assets/images/empty-list.png')}
+      style={s.emptyImage}
+    />
+    <Text style={s.emptyText}>
+      <Trans i18nKey="movements.list.empty" />
+    </Text>
+  </View>
+);
+
 export const ListMovements = ({data}: ListMovementsProps) => {
   const {navigate} = useNavigation<StackNavigationProps>();
 
   return (
     <SectionList
+      contentContainerStyle={s.contentContainer}
       sections={data}
       keyExtractor={item => `${item.id}`}
+      ListEmptyComponent={EmptyListMovements}
       renderItem={({item: movement}) => (
         <ListMovementItem
           movement={movement}
@@ -31,11 +45,9 @@ export const ListMovements = ({data}: ListMovementsProps) => {
         />
       )}
       renderSectionHeader={({section: {title}}) => (
-        <View style={s.title}>
-          <Text style={s.titleText}>
-            <Trans i18nKey={title} />
-          </Text>
-        </View>
+        <Text style={s.title}>
+          <Trans i18nKey={title} />
+        </Text>
       )}
     />
   );

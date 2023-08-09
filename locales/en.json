@@ -15,6 +15,7 @@
       "used": "used"
     },
     "list": {
+      "empty": "There is no movements yet!",
       "today": "Today",
       "yesterday": "Yesterday",
       "last_week": "Last Week",

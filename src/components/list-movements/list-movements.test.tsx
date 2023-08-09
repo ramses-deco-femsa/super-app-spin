@@ -17,4 +17,10 @@ describe('<ListMovements />', () => {
       screen.getByText(i18n.t(MOVEMENTS_FORMATTED_DATA[1].title)),
     ).toBeDefined();
   });
+
+  it('should render empty list component', () => {
+    render(<ListMovements data={[]} />);
+
+    expect(screen.getByTestId('empty-list-movements')).toBeDefined();
+  });
 });
