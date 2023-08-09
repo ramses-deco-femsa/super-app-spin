@@ -4,10 +4,13 @@ import {Image, View} from 'react-native';
 import {useTranslation} from 'react-i18next';
 
 import {Text} from '@digitaltitransversal';
+import {useAppCtx} from '@sas/context';
+import {formatCurrency, formatNumberWithCommas} from '@sas/utils';
 
 import {s} from './check-points.styles';
 
 export const CheckPoints = () => {
+  const {user} = useAppCtx();
   const {t} = useTranslation();
 
   return (
@@ -15,7 +18,8 @@ export const CheckPoints = () => {
       <View>
         <Text style={s.labelHeader}>{t('youHave')}</Text>
         <Text style={s.resumePoints}>
-          10,657 {t('points').toLocaleLowerCase()}
+          {formatNumberWithCommas(user!.points)}{' '}
+          {t('points').toLocaleLowerCase()}
         </Text>
         <View style={s.pillContainer}>
           <View style={s.sparkIconContainer}>
@@ -24,7 +28,9 @@ export const CheckPoints = () => {
               source={require('../../ui/assets/spark-premia-icon.png')}
             />
           </View>
-          <Text style={s.conversionPointsText}>{t('score')} $156.00</Text>
+          <Text style={s.conversionPointsText}>
+            {t('score')} {formatCurrency(user!.points / 10)}
+          </Text>
         </View>
       </View>
       <View>
