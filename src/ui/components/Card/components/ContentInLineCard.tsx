@@ -82,7 +82,7 @@ const styles = (theme: ThemeContextType) =>
   StyleSheet.create({
     card: {
       height: 80,
-      width: '90%',
+      width: '100%',
       justifyContent: 'center',
       flexDirection: 'row',
       alignItems: 'center',

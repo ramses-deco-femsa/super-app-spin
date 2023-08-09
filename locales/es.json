@@ -9,7 +9,7 @@
   "score": "Valen",
   "points": "Puntos",
   "winFreeProducts": "ganar productos de regalo",
-  "verySoonYoWillBeAbleToAccumulateYouPoints":"Muy pronto podrás sumar tus compras y",
+  "verySoonYoWillBeAbleToAccumulateYouPoints": "Muy pronto podrás sumar tus compras y",
   "accumulatePoints": "Acumula puntos",
   "earnMorePoints": "Gana más puntos",
   "verySoonYouWillBeAbleToEarnMorePointsInTheTotalOfYourPurchase": "Muy pronto podrás ganar más puntos en el total de tu compra",
@@ -47,13 +47,18 @@
       "transaction_number": "Número de transacción:"
     }
   },
-  "brand_entity": {
-    "types": {
-      "transport": "Movilidad",
-      "entertainment": "Entretenimiento",
-      "sport": "Deportes",
-      "store": "Tienda",
-      "gas-station": "Gasolina"
+  "redeem_points": {
+    "choose_brand": {
+      "title": "Elige la marca aliada en la que quieres usar tus puntos",
+      "brand_entity": {
+        "types": {
+          "transport": "Movilidad",
+          "entertainment": "Entretenimiento",
+          "sport": "Deportes",
+          "store": "Tienda",
+          "gas-station": "Gasolina"
+        }
+      }
     }
   }
 }

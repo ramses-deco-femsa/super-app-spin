@@ -47,13 +47,18 @@
       "transaction_number": "Transaction number:"
     }
   },
-  "brand_entity": {
-    "types": {
-      "transport": "Transport",
-      "entertainment": "Entertainment",
-      "sport": "Sports",
-      "store": "Stores",
-      "gas-station": "Gas"
+  "redeem_points": {
+    "choose_brand": {
+      "title": "Choose the partner brand in which you want to use your points",
+      "brand_entity": {
+        "types": {
+          "transport": "Transport",
+          "entertainment": "Entertainment",
+          "sport": "Sports",
+          "store": "Stores",
+          "gas-station": "Gas"
+        }
+      }
     }
   }
 }
