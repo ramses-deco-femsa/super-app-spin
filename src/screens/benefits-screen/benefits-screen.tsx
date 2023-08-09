@@ -7,6 +7,7 @@ import {useTranslation} from 'react-i18next';
 import {Text} from '@digitaltitransversal';
 import {
   AccumulatePoints,
+  RewardsPoints,
   CheckPoints,
   CtaCheckPoints,
   EarnMorePoints,
@@ -30,6 +31,7 @@ export const BenefitsScreen = (_props: BenefitsScreenProps) => {
         />
         <AccumulatePoints />
         <EarnMorePoints />
+        <RewardsPoints />
       </ScrollView>
     </MainContainer>
   );
