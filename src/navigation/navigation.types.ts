@@ -18,6 +18,8 @@ export enum RouteNames {
   MovementsListTab = 'Todos',
   MovementsEarnedTab = 'Ganados',
   MovementsUsedTab = 'Usados',
+
+  ChooseBrandEntityScreen = 'ChooseBrandEntityScreen',
 }
 
 export type RootStackParamList = {
@@ -34,6 +36,7 @@ export type RootStackParamList = {
   [RouteNames.MovementsListTab]: undefined;
   [RouteNames.MovementsEarnedTab]: undefined;
   [RouteNames.MovementsUsedTab]: undefined;
+  [RouteNames.ChooseBrandEntityScreen]: undefined;
 };
 
 export type StackNavigationProps = StackNavigationProp<RootStackParamList>;

@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {FC} from 'react';
 import {ScrollView} from 'react-native';
 
 import {BottomTabScreenProps} from '@react-navigation/bottom-tabs';
-import {useTranslation} from 'react-i18next';
+import {Trans} from 'react-i18next';
 
 import {Text} from '@digitaltitransversal';
 import {
@@ -13,22 +13,21 @@ import {
   EarnMorePoints,
   MainContainer,
 } from '@sas/components';
-import {RootStackParamList, RouteNames} from '@sas/navigation/navigation.types';
+import {RootStackParamList} from '@sas/navigation/navigation.types';
 
 import {s} from './benefits-screen.styles';
 
 export type BenefitsScreenProps = BottomTabScreenProps<RootStackParamList>;
 
-export const BenefitsScreen = (_props: BenefitsScreenProps) => {
-  const {t} = useTranslation();
+export const BenefitsScreen: FC<BenefitsScreenProps> = () => {
   return (
     <MainContainer>
-      <Text style={s.titleBenefits}>{t('benefits')}</Text>
+      <Text style={s.titleBenefits}>
+        <Trans i18nKey="benefits" />
+      </Text>
       <CheckPoints />
       <ScrollView>
-        <CtaCheckPoints
-          onPress={() => _props.navigation.navigate(RouteNames.MovementsScreen)}
-        />
+        <CtaCheckPoints />
         <AccumulatePoints />
         <EarnMorePoints />
         <RewardsPoints />

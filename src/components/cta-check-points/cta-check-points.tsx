@@ -1,21 +1,23 @@
-import React, {FC} from 'react';
+import React from 'react';
 import {Image, Platform, Text, View, useWindowDimensions} from 'react-native';
 
-import {useTranslation} from 'react-i18next';
+import {useNavigation} from '@react-navigation/native';
+import {Trans} from 'react-i18next';
 
+import {
+  RouteNames,
+  StackNavigationProps,
+} from '@sas/navigation/navigation.types';
 import BaseCard from '@sas/ui/components/Card/components/BaseCard';
 
 import {s} from './cta-check-points.styles';
 
-interface CheckPointProps {
-  onPress: () => void;
-}
+export const CtaCheckPoints = () => {
+  const {navigate} = useNavigation<StackNavigationProps>();
 
-export const CtaCheckPoints: FC<CheckPointProps> = ({onPress}) => {
   const {width} = useWindowDimensions();
   const cardWidth = width / 2 - 60;
   const cardWithAndroid = width / 2 - 50;
-  const {t} = useTranslation();
 
   return (
     <View style={s.cardsCtaContainer}>
@@ -25,11 +27,15 @@ export const CtaCheckPoints: FC<CheckPointProps> = ({onPress}) => {
           width: Platform.OS === 'ios' ? cardWidth : cardWithAndroid,
           marginRight: 8,
         }}
-        onPress={onPress}>
+        onPress={() => navigate(RouteNames.MovementsScreen)}>
         <View style={s.contentCard}>
           <Image source={require('../../ui/assets/Media/history-card.png')} />
-          <Text style={s.titleCard}>{t('check')}</Text>
-          <Text style={s.titleCard}>{t('yourHistory')}</Text>
+          <Text style={s.titleCard}>
+            <Trans i18nKey="check" />
+          </Text>
+          <Text style={s.titleCard}>
+            <Trans i18nKey="yourHistory" />
+          </Text>
         </View>
       </BaseCard>
       <BaseCard
@@ -38,10 +44,12 @@ export const CtaCheckPoints: FC<CheckPointProps> = ({onPress}) => {
           width: Platform.OS === 'ios' ? cardWidth : cardWithAndroid,
           marginLeft: 8,
         }}
-        onPress={onPress}>
+        onPress={() => navigate(RouteNames.ChooseBrandEntityScreen)}>
         <View style={s.contentCard}>
           <Image source={require('../../ui/assets/Media/star.png')} />
-          <Text style={s.titleCard}>{t('changePoints')}</Text>
+          <Text style={s.titleCard}>
+            <Trans i18nKey="changePoints" />
+          </Text>
         </View>
       </BaseCard>
     </View>
