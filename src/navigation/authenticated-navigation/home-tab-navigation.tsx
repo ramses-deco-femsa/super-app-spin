@@ -20,6 +20,8 @@ export const HomeTabNavigation = () => (
     initialRouteName={RouteNames.HomeTab}
     sceneContainerStyle={{
       backgroundColor: 'white',
+      paddingHorizontal: 16,
+      alignItems: 'center',
     }}
     screenOptions={{
       headerShown: false,
