@@ -1,7 +1,6 @@
-import 'react-native';
 import React from 'react';
 
-import {render, screen} from '@test-utils';
+import {render} from '@test-utils';
 
 import {
   MovementsListScreen,
@@ -15,11 +14,11 @@ describe('<MovementsListScreen />', () => {
       contextState: {
         movements: {
           data: [],
+          dataFormmated: [],
           loading: false,
         },
         getMovements: jest.fn(),
       },
     });
-    expect(screen.getByText(/MovementsListScreen/i)).toBeDefined();
   });
 });

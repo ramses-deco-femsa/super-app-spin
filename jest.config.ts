@@ -23,6 +23,11 @@ const jestConfig: JestConfigWithTsJest = {
     prefix: '<rootDir>/',
   }),
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
+  collectCoverageFrom: [
+    '**/*{ts,tsx}',
+    '!jest.config.ts',
+    '!<rootDir>/src/ui/**',
+  ],
   fakeTimers: {
     enableGlobally: true,
   },

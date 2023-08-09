@@ -4,7 +4,7 @@ import {getMovements} from './actions';
 import {appReducer, appInitialState, AppState} from './reducer';
 
 type AppContextActions = {
-  getMovements: () => Promise<void>;
+  getMovements: () => ReturnType<typeof getMovements>;
 };
 
 export type AppContext = AppState & AppContextActions;

@@ -7,5 +7,30 @@
   "changePoints": "Cambia tus puntos",
   "youHave": "Tienes",
   "score": "Valen",
-  "points": "Puntos"
+  "points": "Puntos",
+  "movements": {
+    "tabs": {
+      "all": "Todos",
+      "earned": "Ganados",
+      "used": "Usados"
+    },
+    "list": {
+      "empty": "Aún no hay movimientos!",
+      "today": "Hoy",
+      "yesterday": "Ayer",
+      "last_week": "Semana Anterior",
+      "january": "Enero",
+      "february": "Febrero",
+      "march": "Marzo",
+      "april": "Abril",
+      "may": "Mayo",
+      "june": "Junio",
+      "july": "Julio",
+      "august": "Agosto",
+      "september": "Septiembre",
+      "october": "Octubre",
+      "november": "Noviembre",
+      "december": "Diciembre"
+    }
+  }
 }

@@ -3,8 +3,13 @@ export type Movement = {
   entity: string;
   date: string;
   points: number;
-  operation: string;
+  operation: 'earned' | 'expended';
   transactionNo: string;
   expiryDate?: string;
   giftCode?: string;
+};
+
+export type MovementsFormatted = {
+  title: string;
+  data: Movement[];
 };

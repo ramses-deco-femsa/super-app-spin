@@ -1,4 +1,5 @@
 import {MOVEMENTS_DATA} from '@sas/__mocks__';
+import {formatMovementsByDate} from '@sas/utils';
 
 import {appReducer, appInitialState} from './app-reducer';
 import {ActionTypes, Types} from '../actions';
@@ -25,6 +26,9 @@ describe('app-reducer', () => {
 
       expect(newState.movements.loading).toBeFalsy();
       expect(newState.movements.data).toEqual(MOVEMENTS_DATA);
+      expect(newState.movements.dataFormmated).toEqual(
+        formatMovementsByDate(MOVEMENTS_DATA),
+      );
     });
 
     it('sets error message and loading as false on FETCH_MOVEMENTS_FAILURE', () => {

@@ -7,5 +7,30 @@
   "changePoints": "Change your points",
   "youHave": "You have",
   "score": "Score",
-  "points": "Points"
+  "points": "Points",
+  "movements": {
+    "tabs": {
+      "all": "all",
+      "earned": "earned",
+      "used": "used"
+    },
+    "list": {
+      "empty": "There is no movements yet!",
+      "today": "Today",
+      "yesterday": "Yesterday",
+      "last_week": "Last Week",
+      "january": "January",
+      "february": "February",
+      "march": "March",
+      "april": "April",
+      "may": "May",
+      "june": "June",
+      "july": "July",
+      "august": "August",
+      "september": "September",
+      "october": "October",
+      "november": "November",
+      "december": "December"
+    }
+  }
 }

@@ -1,19 +1,23 @@
-import React from 'react';
-import {View, Text, Button} from 'react-native';
+import React, {FC} from 'react';
 
 import {MaterialTopTabScreenProps} from '@react-navigation/material-top-tabs';
 
-import {RootStackParamList, RouteNames} from '@sas/navigation/navigation.types';
+import {ListMovements, PrefetchLoaderNavigator} from '@sas/components';
+import {useAppCtx} from '@sas/context';
+import {RootStackParamList} from '@sas/navigation/navigation.types';
 
 export type MovementsListScreenProps =
   MaterialTopTabScreenProps<RootStackParamList>;
 
-export const MovementsListScreen = ({navigation}: MovementsListScreenProps) => (
-  <View>
-    <Text>MovementsListScreen</Text>
-    <Button
-      onPress={() => navigation.navigate(RouteNames.MovementDetailScreen)}
-      title="go to movement detail"
-    />
-  </View>
-);
+export const MovementsListScreen: FC<MovementsListScreenProps> = () => {
+  const {movements, getMovements} = useAppCtx();
+
+  return (
+    <PrefetchLoaderNavigator
+      action={getMovements}
+      error={movements.error}
+      loading={movements.loading}>
+      <ListMovements data={movements.dataFormmated} />
+    </PrefetchLoaderNavigator>
+  );
+};

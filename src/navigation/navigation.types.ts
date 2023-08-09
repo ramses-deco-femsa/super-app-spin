@@ -1,3 +1,7 @@
+import type {StackNavigationProp} from '@react-navigation/stack';
+
+import type {Movement} from '@sas/types';
+
 export enum RouteNames {
   // unauthenticated
   OnboardingScreen = 'OnboardingScreen',
@@ -23,9 +27,13 @@ export type RootStackParamList = {
   [RouteNames.BenefitsTab]: undefined;
   [RouteNames.WalletTab]: undefined;
   [RouteNames.AccountTab]: undefined;
-  [RouteNames.MovementDetailScreen]: undefined;
+  [RouteNames.MovementDetailScreen]: {
+    movement: Movement;
+  };
   [RouteNames.MovementsScreen]: undefined;
   [RouteNames.MovementsListTab]: undefined;
   [RouteNames.MovementsEarnedTab]: undefined;
   [RouteNames.MovementsUsedTab]: undefined;
 };
+
+export type StackNavigationProps = StackNavigationProp<RootStackParamList>;

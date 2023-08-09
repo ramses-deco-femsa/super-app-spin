@@ -1,10 +1,12 @@
-import type {Movement} from '@sas/types';
+import type {Movement, MovementsFormatted} from '@sas/types';
+import {formatMovementsByDate} from '@sas/utils';
 
 import {ActionTypes, Types} from '../actions';
 
 export type AppState = {
   movements: {
     data: Movement[];
+    dataFormmated: MovementsFormatted[];
     loading: boolean;
     error?: string;
   };
@@ -12,8 +14,9 @@ export type AppState = {
 
 export const appInitialState: AppState = {
   movements: {
+    dataFormmated: [],
     data: [],
-    loading: true,
+    loading: false,
     error: undefined,
   },
 };
@@ -37,6 +40,7 @@ export const appReducer = (
         ...state,
         movements: {
           data: action.payload.movements,
+          dataFormmated: formatMovementsByDate(action.payload.movements),
           loading: false,
           error: undefined,
         },

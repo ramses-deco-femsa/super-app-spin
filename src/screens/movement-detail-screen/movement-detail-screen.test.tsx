@@ -1,4 +1,3 @@
-import 'react-native';
 import React from 'react';
 
 import {render, screen} from '@test-utils';
