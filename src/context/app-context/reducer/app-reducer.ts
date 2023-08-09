@@ -1,4 +1,4 @@
-import type {Movement, MovementsFormatted} from '@sas/types';
+import type {BrandEntity, Movement, MovementsFormatted} from '@sas/types';
 import {formatMovementsByDate} from '@sas/utils';
 
 import {ActionTypes, Types} from '../actions';
@@ -10,11 +10,21 @@ export type AppState = {
     loading: boolean;
     error?: string;
   };
+  brandEntities: {
+    data: BrandEntity[];
+    loading: boolean;
+    error?: string;
+  };
 };
 
 export const appInitialState: AppState = {
   movements: {
     dataFormmated: [],
+    data: [],
+    loading: false,
+    error: undefined,
+  },
+  brandEntities: {
     data: [],
     loading: false,
     error: undefined,
@@ -50,6 +60,33 @@ export const appReducer = (
         ...state,
         movements: {
           ...state.movements,
+          loading: false,
+          error: action.payload.error,
+        },
+      };
+    case Types.FETCH_BRAND_ENTITITES_REQUEST:
+      return {
+        ...state,
+        brandEntities: {
+          ...state.brandEntities,
+          loading: true,
+          error: undefined,
+        },
+      };
+    case Types.FETCH_BRAND_ENTITITES_SUCCESS:
+      return {
+        ...state,
+        brandEntities: {
+          data: action.payload.brands,
+          loading: false,
+          error: undefined,
+        },
+      };
+    case Types.FETCH_BRAND_ENTITITES_FAILURE:
+      return {
+        ...state,
+        brandEntities: {
+          ...state.brandEntities,
           loading: false,
           error: action.payload.error,
         },

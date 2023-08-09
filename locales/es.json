@@ -46,5 +46,14 @@
       "use_them_from": "Úsalos desde:",
       "transaction_number": "Número de transacción:"
     }
+  },
+  "brand_entity": {
+    "types": {
+      "transport": "Movilidad",
+      "entertainment": "Entretenimiento",
+      "sport": "Deportes",
+      "store": "Tienda",
+      "gas-station": "Gasolina"
+    }
   }
 }
