@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {Image, Text, View, useWindowDimensions} from 'react-native';
+import {Image, Platform, Text, View, useWindowDimensions} from 'react-native';
 
 import {useTranslation} from 'react-i18next';
 
@@ -13,7 +13,8 @@ interface CheckPointProps {
 
 export const CtaCheckPoints: FC<CheckPointProps> = ({onPress}) => {
   const {width} = useWindowDimensions();
-  const cardWidth = width / 2 - 24;
+  const cardWidth = width / 2 - 60;
+  const cardWithAndroid = width / 2 - 50;
   const {t} = useTranslation();
 
   return (
@@ -21,7 +22,7 @@ export const CtaCheckPoints: FC<CheckPointProps> = ({onPress}) => {
       <BaseCard
         style={{
           ...s.baseCard,
-          width: cardWidth,
+          width: Platform.OS === 'ios' ? cardWidth : cardWithAndroid,
           marginRight: 8,
         }}
         onPress={onPress}>
@@ -34,7 +35,7 @@ export const CtaCheckPoints: FC<CheckPointProps> = ({onPress}) => {
       <BaseCard
         style={{
           ...s.baseCard,
-          width: cardWidth,
+          width: Platform.OS === 'ios' ? cardWidth : cardWithAndroid,
           marginLeft: 8,
         }}
         onPress={onPress}>
