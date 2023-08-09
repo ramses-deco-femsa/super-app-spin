@@ -22,11 +22,14 @@ describe('<MovementDetail />', () => {
 
     const detailContent = screen.getByTestId('movement-detail-content');
 
+    const expectedAmount = '' + movement.points / 10;
+    expect(detailContent).toHaveTextContent(expectedAmount);
+
     const expectedDate = '9/8/2023';
     expect(detailContent).toHaveTextContent(expectedDate);
 
-    const expectedAmount = '' + movement.points / 10;
-    expect(detailContent).toHaveTextContent(expectedAmount);
+    const expectedDateFrom = '9/11/2023'; // +3 months
+    expect(detailContent).toHaveTextContent(expectedDateFrom);
 
     expect(detailContent).toHaveTextContent(movement.transactionNo);
   });
