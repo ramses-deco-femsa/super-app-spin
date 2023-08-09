@@ -5,7 +5,7 @@ import {COLORS} from '@sas/theme';
 export const s = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFF',
+    backgroundColor: COLORS.surface_primary,
     padding: 16,
   },
   card: {
@@ -50,7 +50,7 @@ export const s = StyleSheet.create({
     textAlign: 'center',
   },
   tag: {
-    backgroundColor: COLORS.body,
+    backgroundColor: COLORS.surface_secondary,
     padding: 10,
     borderRadius: 36,
   },
@@ -95,7 +95,7 @@ export const s = StyleSheet.create({
   transactionNumberRow: {
     marginTop: 16,
     borderTopWidth: 1,
-    borderTopColor: COLORS.content_secondary,
+    borderTopColor: COLORS.surface_secondary,
     paddingTop: 16,
     gap: 8,
   },
