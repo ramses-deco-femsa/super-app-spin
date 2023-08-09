@@ -1,20 +1,17 @@
 import React from 'react';
-import {View, Text, Button} from 'react-native';
 
 import {StackScreenProps} from '@react-navigation/stack';
 
+import {MovementDetail} from '@sas/components';
 import {RootStackParamList, RouteNames} from '@sas/navigation/navigation.types';
 
-export type MovementDetailScreenProps = StackScreenProps<RootStackParamList>;
+export type MovementDetailScreenProps = StackScreenProps<
+  RootStackParamList,
+  RouteNames.MovementDetailScreen
+>;
 
 export const MovementDetailScreen = ({
-  navigation,
-}: MovementDetailScreenProps) => (
-  <View>
-    <Text>MovementDetailScreen</Text>
-    <Button
-      onPress={() => navigation.navigate(RouteNames.AccountTab)}
-      title="go to account"
-    />
-  </View>
-);
+  route: {
+    params: {movement},
+  },
+}: MovementDetailScreenProps) => <MovementDetail movement={movement} />;

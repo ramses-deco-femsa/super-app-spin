@@ -1,5 +1,6 @@
 import React from 'react';
 
+import {MOVEMENTS_DATA} from '@sas/__mocks__';
 import {render, screen} from '@test-utils';
 
 import {
@@ -10,7 +11,14 @@ import {
 describe('<MovementDetailScreen />', () => {
   it('should render MovementDetailScreen', () => {
     // TODO: improve props passing data
-    render(<MovementDetailScreen {...({} as MovementDetailScreenProps)} />);
-    expect(screen.getByText(/MovementDetailScreen/i)).toBeDefined();
+    render(
+      <MovementDetailScreen
+        {...({
+          route: {params: {movement: MOVEMENTS_DATA[0]}},
+        } as MovementDetailScreenProps)}
+      />,
+    );
+
+    expect(screen.getByTestId('movement-detai')).toBeDefined();
   });
 });

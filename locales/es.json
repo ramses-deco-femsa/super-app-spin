@@ -38,6 +38,13 @@
       "october": "Octubre",
       "november": "Noviembre",
       "december": "Diciembre"
+    },
+    "detail": {
+      "purchase_earned_points": "En esta compra ganaste:",
+      "total_amount": "Monto total:",
+      "date": "Fecha:",
+      "use_them_from": "Úsalos desde:",
+      "transaction_number": "Número de transacción:"
     }
   }
 }
