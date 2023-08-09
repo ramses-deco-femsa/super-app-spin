@@ -7,23 +7,24 @@ import type {Movement} from '@sas/types';
 
 import {MovementsActions, MovementTypes} from '../movements-types';
 
-export const getMovements = async (dispatch: Dispatch<MovementsActions>) => {
-  dispatch({type: MovementTypes.FETCH_MOVEMENTS_REQUEST});
+export const getMovements =
+  (dispatch: Dispatch<MovementsActions>) => async () => {
+    dispatch({type: MovementTypes.FETCH_MOVEMENTS_REQUEST});
 
-  try {
-    const {data} = await femsaAPI.get<Movement[]>('/history');
+    try {
+      const {data} = await femsaAPI.get<Movement[]>('/history');
 
-    dispatch({
-      type: MovementTypes.FETCH_MOVEMENTS_SUCCESS,
-      payload: {movements: data},
-    });
-  } catch (err) {
-    if (err instanceof AxiosError || err instanceof Error) {
       dispatch({
-        type: MovementTypes.FETCH_MOVEMENTS_FAILURE,
-        payload: {error: err.message},
+        type: MovementTypes.FETCH_MOVEMENTS_SUCCESS,
+        payload: {movements: data},
       });
+    } catch (err) {
+      if (err instanceof AxiosError || err instanceof Error) {
+        dispatch({
+          type: MovementTypes.FETCH_MOVEMENTS_FAILURE,
+          payload: {error: err.message},
+        });
+      }
+      throw err;
     }
-    throw err;
-  }
-};
+  };

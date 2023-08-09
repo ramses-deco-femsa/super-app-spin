@@ -1,9 +1,11 @@
-import type {BrandEntity, Movement, MovementsFormatted} from '@sas/types';
+import {USER_DATA} from '@sas/__mocks__';
+import type {BrandEntity, Movement, MovementsFormatted, User} from '@sas/types';
 import {formatMovementsByDate} from '@sas/utils';
 
 import {ActionTypes, Types} from '../actions';
 
 export type AppState = {
+  user: User | null;
   movements: {
     data: Movement[];
     dataFormmated: MovementsFormatted[];
@@ -18,6 +20,8 @@ export type AppState = {
 };
 
 export const appInitialState: AppState = {
+  // NOTE: use mock user until login screen
+  user: USER_DATA,
   movements: {
     dataFormmated: [],
     data: [],
@@ -36,6 +40,28 @@ export const appReducer = (
   action: ActionTypes,
 ): AppState => {
   switch (action.type) {
+    case Types.LOGIN:
+      return {
+        ...state,
+        user: action.payload.user,
+      };
+    case Types.LOGOUT:
+      return {
+        ...appInitialState,
+        user: null,
+      };
+    case Types.REDEEM_POINTS:
+      if (!state.user) {
+        return state;
+      }
+
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          points: state.user.points - action.payload.points,
+        },
+      };
     case Types.FETCH_MOVEMENTS_REQUEST:
       return {
         ...state,

@@ -14,7 +14,7 @@ describe('getMovements action', () => {
   it('should dispatch FETCH_MOVEMENTS_SUCCESS on endpoint success', async () => {
     femsaAPIMock.onGet('/history').reply(200, MOVEMENTS_DATA);
 
-    await getMovements(dispatch);
+    await getMovements(dispatch)();
 
     expect(dispatch).toHaveBeenNthCalledWith(1, {
       type: MovementTypes.FETCH_MOVEMENTS_REQUEST,
@@ -28,7 +28,7 @@ describe('getMovements action', () => {
   it('should dispatch FETCH_MOVEMENTS_FAILURE on endpoint fail', async () => {
     femsaAPIMock.onGet('/history').reply(404);
 
-    await expect(getMovements(dispatch)).rejects.toThrowError();
+    await expect(getMovements(dispatch)()).rejects.toThrowError();
 
     expect(dispatch).toHaveBeenNthCalledWith(1, {
       type: MovementTypes.FETCH_MOVEMENTS_REQUEST,

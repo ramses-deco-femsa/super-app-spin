@@ -13,3 +13,5 @@ export type MovementsFormatted = {
   title: string;
   data: Movement[];
 };
+
+export type NewMovement = Omit<Movement, 'id'>;

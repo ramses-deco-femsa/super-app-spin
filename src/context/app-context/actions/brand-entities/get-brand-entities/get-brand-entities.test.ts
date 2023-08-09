@@ -14,7 +14,7 @@ describe('getBrandEntities action', () => {
   it('should dispatch FETCH_BRAND_ENTITITES_SUCCESS on endpoint success', async () => {
     femsaAPIMock.onGet('/entity').reply(200, BRAND_ENTITIES_DATA);
 
-    await getBrandEntities(dispatch);
+    await getBrandEntities(dispatch)();
 
     expect(dispatch).toHaveBeenNthCalledWith(1, {
       type: BrandEntitiesTypes.FETCH_BRAND_ENTITITES_REQUEST,
@@ -28,7 +28,7 @@ describe('getBrandEntities action', () => {
   it('should dispatch FETCH_BRAND_ENTITITES_FAILURE on endpoint fail', async () => {
     femsaAPIMock.onGet('/entity').reply(404);
 
-    await expect(getBrandEntities(dispatch)).rejects.toThrowError();
+    await expect(getBrandEntities(dispatch)()).rejects.toThrowError();
 
     expect(dispatch).toHaveBeenNthCalledWith(1, {
       type: BrandEntitiesTypes.FETCH_BRAND_ENTITITES_REQUEST,
