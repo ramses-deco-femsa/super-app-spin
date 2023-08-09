@@ -9,7 +9,7 @@ export const s = StyleSheet.create({
     paddingHorizontal: 16,
     paddingVertical: 12,
     borderBottomWidth: 1,
-    borderBottomColor: '#E5E5E5',
+    borderBottomColor: COLORS.stroke_secondary,
     gap: 12,
   },
   content: {

@@ -1,18 +1,34 @@
-import {formatDate} from './format-date';
-import {i18n} from '../test-utils/test-utils';
+import {i18n} from '@test-utils';
+
+import {
+  formatNumericDayOfWeekDate,
+  formatDayMonthYearDate,
+} from './format-date';
 
 describe('formatDate', () => {
-  it('should return date format in Spanish', () => {
-    i18n.changeLanguage('es');
-    expect(formatDate('Tue Aug 08 2023')).toBe('Martes 8');
+  describe('formatNumericDayOfWeekDate', () => {
+    it('should return date format as DDDD D in Spanish', () => {
+      i18n.changeLanguage('es');
+      expect(formatNumericDayOfWeekDate('Tue Aug 08 2023')).toBe('Martes 8');
+    });
+
+    it('should return date format as D DDDD in English', () => {
+      i18n.changeLanguage('en');
+      expect(formatNumericDayOfWeekDate('Tue Aug 08 2023')).toBe('8 Tuesday');
+    });
+
+    it('should return date param if is invalid date', () => {
+      expect(formatNumericDayOfWeekDate('tuesday')).toBe('tuesday');
+    });
   });
 
-  it('should return date format in English', () => {
-    i18n.changeLanguage('en');
-    expect(formatDate('Tue Aug 08 2023')).toBe('8 Tuesday');
-  });
+  describe('formatDayMonthYearDate', () => {
+    it('should return date format in DD/MM/YYYY', () => {
+      expect(formatDayMonthYearDate('Tue Aug 08 2023')).toBe('8/8/2023');
+    });
 
-  it('should return date param if is invalid date', () => {
-    expect(formatDate('tuesday')).toBe('tuesday');
+    it('should return date param if is invalid date', () => {
+      expect(formatDayMonthYearDate('tuesday')).toBe('tuesday');
+    });
   });
 });
