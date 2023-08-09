@@ -21,8 +21,8 @@ export const s = StyleSheet.create({
     gap: 16,
   },
   image: {
-    width: 40,
-    height: 40,
+    width: 48,
+    height: 48,
     resizeMode: 'cover',
   },
 });

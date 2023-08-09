@@ -112,8 +112,6 @@ const styles = (theme: ThemeContextType) =>
       color: theme.colors.content_tertiary,
     },
     imageContainer: {
-      padding: 15,
-      backgroundColor: theme.colors.surface_secondary,
       borderRadius: 100,
       marginLeft: 10,
     },
