@@ -1,4 +1,5 @@
 import React from 'react';
+import {ScrollView} from 'react-native';
 
 import {BottomTabScreenProps} from '@react-navigation/bottom-tabs';
 import {useTranslation} from 'react-i18next';
@@ -8,6 +9,7 @@ import {
   AccumulatePoints,
   CheckPoints,
   CtaCheckPoints,
+  EarnMorePoints,
   MainContainer,
 } from '@sas/components';
 import {RootStackParamList, RouteNames} from '@sas/navigation/navigation.types';
@@ -22,10 +24,13 @@ export const BenefitsScreen = (_props: BenefitsScreenProps) => {
     <MainContainer>
       <Text style={s.titleBenefits}>{t('benefits')}</Text>
       <CheckPoints />
-      <CtaCheckPoints
-        onPress={() => _props.navigation.navigate(RouteNames.MovementsScreen)}
-      />
-      <AccumulatePoints />
+      <ScrollView>
+        <CtaCheckPoints
+          onPress={() => _props.navigation.navigate(RouteNames.MovementsScreen)}
+        />
+        <AccumulatePoints />
+        <EarnMorePoints />
+      </ScrollView>
     </MainContainer>
   );
 };
