@@ -9,7 +9,7 @@ import {
 
 import {MOVEMENTS_ICON_MAPPER} from '@sas/constants';
 import type {Movement} from '@sas/types';
-import {formatDate} from '@sas/utils';
+import {formatNumericDayOfWeekDate} from '@sas/utils';
 
 import {s} from './list-movement-item.styles';
 
@@ -32,7 +32,7 @@ export const ListMovementItem = ({
     <View style={s.content}>
       <View style={s.textContainer}>
         <Text style={s.title}>{movement.entity}</Text>
-        <Text style={s.date}>{formatDate(movement.date)}</Text>
+        <Text style={s.date}>{formatNumericDayOfWeekDate(movement.date)}</Text>
       </View>
       <View>
         <Text style={s.points}>+ {movement.points}</Text>
