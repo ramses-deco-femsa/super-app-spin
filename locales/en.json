@@ -46,5 +46,19 @@
       "use_them_from": "Use them from:",
       "transaction_number": "Transaction number:"
     }
+  },
+  "redeem_points": {
+    "choose_brand": {
+      "title": "Choose the partner brand in which you want to use your points",
+      "brand_entity": {
+        "types": {
+          "transport": "Transport",
+          "entertainment": "Entertainment",
+          "sport": "Sports",
+          "store": "Stores",
+          "gas-station": "Gas"
+        }
+      }
+    }
   }
 }

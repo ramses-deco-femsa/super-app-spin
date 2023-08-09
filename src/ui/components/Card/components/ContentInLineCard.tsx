@@ -82,7 +82,7 @@ const styles = (theme: ThemeContextType) =>
   StyleSheet.create({
     card: {
       height: 80,
-      width: '90%',
+      width: '100%',
       justifyContent: 'center',
       flexDirection: 'row',
       alignItems: 'center',
@@ -112,8 +112,6 @@ const styles = (theme: ThemeContextType) =>
       color: theme.colors.content_tertiary,
     },
     imageContainer: {
-      padding: 15,
-      backgroundColor: theme.colors.surface_secondary,
       borderRadius: 100,
       marginLeft: 10,
     },

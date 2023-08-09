@@ -4,7 +4,12 @@ import {Platform} from 'react-native';
 import {createStackNavigator} from '@react-navigation/stack';
 
 import {RootStackParamList, RouteNames} from '@sas/navigation/navigation.types';
-import {MovementDetailScreen} from '@sas/screens';
+import {
+  ChooseBrandEntityScreen,
+  MovementDetailScreen,
+  RedeemPointsScreen,
+  RedeemPointsSuccessfulScreen,
+} from '@sas/screens';
 
 import {HomeTabNavigation} from './home-tab-navigation';
 import {MovementsTabNavigation} from './movements-tab-navigation';
@@ -45,6 +50,18 @@ export const AuthenticatedNavigation = () => (
     <Stack.Screen
       name={RouteNames.MovementDetailScreen}
       component={MovementDetailScreen}
+    />
+    <Stack.Screen
+      name={RouteNames.ChooseBrandEntityScreen}
+      component={ChooseBrandEntityScreen}
+    />
+    <Stack.Screen
+      name={RouteNames.RedeemPointsScreen}
+      component={RedeemPointsScreen}
+    />
+    <Stack.Screen
+      name={RouteNames.RedeemPointsSuccessfulScreen}
+      component={RedeemPointsSuccessfulScreen}
     />
   </Stack.Navigator>
 );

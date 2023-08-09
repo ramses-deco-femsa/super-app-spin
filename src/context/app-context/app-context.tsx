@@ -1,10 +1,11 @@
 import React, {ReactNode, createContext, useContext, useReducer} from 'react';
 
-import {getMovements} from './actions';
+import {getMovements, getBrandEntities} from './actions';
 import {appReducer, appInitialState, AppState} from './reducer';
 
 type AppContextActions = {
   getMovements: () => ReturnType<typeof getMovements>;
+  getBrandEntities: () => ReturnType<typeof getBrandEntities>;
 };
 
 export type AppContext = AppState & AppContextActions;
@@ -21,6 +22,7 @@ export const AppProvider = ({children, initialValue}: AppProviderProps) => {
 
   const actions: AppContextActions = {
     getMovements: async () => getMovements(dispatch),
+    getBrandEntities: async () => getBrandEntities(dispatch),
   };
 
   return (

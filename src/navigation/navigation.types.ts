@@ -1,6 +1,6 @@
 import type {StackNavigationProp} from '@react-navigation/stack';
 
-import type {Movement} from '@sas/types';
+import type {BrandEntity, Movement} from '@sas/types';
 
 export enum RouteNames {
   // unauthenticated
@@ -18,6 +18,10 @@ export enum RouteNames {
   MovementsListTab = 'Todos',
   MovementsEarnedTab = 'Ganados',
   MovementsUsedTab = 'Usados',
+
+  ChooseBrandEntityScreen = 'ChooseBrandEntityScreen',
+  RedeemPointsScreen = 'RedeemPointsScreen',
+  RedeemPointsSuccessfulScreen = 'RedeemPointsSuccessfulScreen',
 }
 
 export type RootStackParamList = {
@@ -34,6 +38,13 @@ export type RootStackParamList = {
   [RouteNames.MovementsListTab]: undefined;
   [RouteNames.MovementsEarnedTab]: undefined;
   [RouteNames.MovementsUsedTab]: undefined;
+  [RouteNames.ChooseBrandEntityScreen]: undefined;
+  [RouteNames.RedeemPointsScreen]: {
+    brandEntity: BrandEntity;
+  };
+  [RouteNames.RedeemPointsSuccessfulScreen]: {
+    movement: Movement;
+  };
 };
 
 export type StackNavigationProps = StackNavigationProp<RootStackParamList>;
