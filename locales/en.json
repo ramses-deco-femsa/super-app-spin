@@ -1,7 +1,6 @@
 {
   "change-language": "Change language",
   "welcome": "Weolcome to spin by oxxo",
-  "benefits": "Benefits",
   "check": "Check",
   "yourHistory": "Your history",
   "changePoints": "Change your points",
@@ -15,6 +14,15 @@
   "verySoonYouWillBeAbleToEarnMorePointsInTheTotalOfYourPurchase": "Very soon you will be able to earn more points in the total of your purchase",
   "addToBuying": "Sum when buying",
   "verySoonYouWillBeAbleToAccumulatePurchasesAndTakeGiftProducts": "Very soon you will be able to accumulate purchases and take gift products",
+  "benefitsScreen": {
+    "title": "Benefits"
+  },
+  "homeScreen": {
+    "fallback": "Screen home"
+  },
+  "walletScreen": {
+    "fallback": "Screen walllet"
+  },
   "movements": {
     "tabs": {
       "all": "all",

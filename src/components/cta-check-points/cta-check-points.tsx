@@ -1,9 +1,10 @@
 import React from 'react';
-import {Image, Platform, Text, View, useWindowDimensions} from 'react-native';
+import {Image, View, useWindowDimensions} from 'react-native';
 
 import {useNavigation} from '@react-navigation/native';
 import {Trans} from 'react-i18next';
 
+import {Text} from '@digitaltitransversal';
 import {
   RouteNames,
   StackNavigationProps,
@@ -16,15 +17,14 @@ export const CtaCheckPoints = () => {
   const {navigate} = useNavigation<StackNavigationProps>();
 
   const {width} = useWindowDimensions();
-  const cardWidth = width / 2 - 60;
-  const cardWithAndroid = width / 2 - 50;
+  const cardWidth = width / 2 - 24;
 
   return (
     <View style={s.cardsCtaContainer}>
       <BaseCard
         style={{
           ...s.baseCard,
-          width: Platform.OS === 'ios' ? cardWidth : cardWithAndroid,
+          width: cardWidth,
           marginRight: 8,
         }}
         onPress={() => navigate(RouteNames.MovementsScreen)}>
@@ -41,7 +41,7 @@ export const CtaCheckPoints = () => {
       <BaseCard
         style={{
           ...s.baseCard,
-          width: Platform.OS === 'ios' ? cardWidth : cardWithAndroid,
+          width: cardWidth,
           marginLeft: 8,
         }}
         onPress={() => navigate(RouteNames.ChooseBrandEntityScreen)}>

@@ -1,7 +1,9 @@
 import React from 'react';
-import {Image, Text, View} from 'react-native';
+import {Image, View} from 'react-native';
 
 import {useTranslation} from 'react-i18next';
+
+import {Text} from '@digitaltitransversal';
 
 import {s} from './rewards-points.styles';
 

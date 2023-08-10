@@ -12,6 +12,7 @@ import {
   WalletScreen,
   AccountScreen,
 } from '@sas/screens';
+import {ICONS} from '@sas/theme/iconsDimensions';
 
 const Tab = createBottomTabNavigator<RootStackParamList>();
 
@@ -30,7 +31,13 @@ export const HomeTabNavigation = () => (
       name={RouteNames.HomeTab}
       options={{
         tabBarIcon: () => (
-          <Image source={require('../../ui/assets/home-icon.png')} />
+          <Image
+            style={{
+              height: ICONS.ICON_DIMENSIONS,
+              width: ICONS.ICON_DIMENSIONS,
+            }}
+            source={require('../../ui/assets/home-icon.png')}
+          />
         ),
       }}
       component={HomeScreen}
@@ -39,7 +46,13 @@ export const HomeTabNavigation = () => (
       name={RouteNames.BenefitsTab}
       options={{
         tabBarIcon: () => (
-          <Image source={require('../../ui/assets/sparks-icon.png')} />
+          <Image
+            style={{
+              height: ICONS.ICON_DIMENSIONS,
+              width: ICONS.ICON_DIMENSIONS,
+            }}
+            source={require('../../ui/assets/sparks-icon.png')}
+          />
         ),
       }}
       component={BenefitsScreen}
@@ -48,7 +61,13 @@ export const HomeTabNavigation = () => (
       name={RouteNames.WalletTab}
       options={{
         tabBarIcon: () => (
-          <Image source={require('../../ui/assets/wallet-icon.png')} />
+          <Image
+            style={{
+              height: ICONS.ICON_DIMENSIONS,
+              width: ICONS.ICON_DIMENSIONS,
+            }}
+            source={require('../../ui/assets/wallet-icon.png')}
+          />
         ),
       }}
       component={WalletScreen}
@@ -57,7 +76,13 @@ export const HomeTabNavigation = () => (
       name={RouteNames.AccountTab}
       options={{
         tabBarIcon: () => (
-          <Image source={require('../../ui/assets/profile-icon.png')} />
+          <Image
+            style={{
+              height: 24,
+              width: 24,
+            }}
+            source={require('../../ui/assets/profile-icon.png')}
+          />
         ),
       }}
       component={AccountScreen}

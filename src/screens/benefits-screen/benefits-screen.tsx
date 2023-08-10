@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React from 'react';
 import {ScrollView} from 'react-native';
 
 import {BottomTabScreenProps} from '@react-navigation/bottom-tabs';
@@ -12,6 +12,7 @@ import {
   CtaCheckPoints,
   EarnMorePoints,
   MainContainer,
+  AdvertisingSlider,
 } from '@sas/components';
 import {RootStackParamList} from '@sas/navigation/navigation.types';
 
@@ -19,18 +20,19 @@ import {s} from './benefits-screen.styles';
 
 export type BenefitsScreenProps = BottomTabScreenProps<RootStackParamList>;
 
-export const BenefitsScreen: FC<BenefitsScreenProps> = () => {
+export const BenefitsScreen = (_props: BenefitsScreenProps) => {
   return (
     <MainContainer>
       <Text style={s.titleBenefits}>
-        <Trans i18nKey="benefits" />
+        <Trans i18nKey="homeScreen.fallback" />
       </Text>
-      <CheckPoints />
       <ScrollView>
+        <CheckPoints />
         <CtaCheckPoints />
         <AccumulatePoints />
         <EarnMorePoints />
         <RewardsPoints />
+        <AdvertisingSlider />
       </ScrollView>
     </MainContainer>
   );
