@@ -7,6 +7,7 @@ export type RedeemPointsFormState = {
   pointsToRedeemMaxAmountError: boolean;
   userPointsMinAmountError: boolean;
   invalidPointsToRedeem: boolean;
+  isValidForm: boolean;
 };
 
 export const initialState: RedeemPointsFormState = {
@@ -18,6 +19,7 @@ export const initialState: RedeemPointsFormState = {
   pointsToRedeemMaxAmountError: false,
   userPointsMinAmountError: false,
   invalidPointsToRedeem: false,
+  isValidForm: false,
 };
 
 export enum REDEEM_POINTS_FORM_TYPES {
@@ -82,11 +84,20 @@ export const redeemPointsFormReducer = (
     case REDEEM_POINTS_FORM_TYPES.SET_POINTS_TO_REDEEM: {
       const pointsToRedeem = +action.payload.amount * 10;
 
+      const pointsToRedeemMaxAmountError = pointsToRedeem > state.maxAmount;
+      const invalidPointsToRedeem = isNaN(pointsToRedeem);
+      const isInvalid =
+        state.userPointsMinAmountError ||
+        pointsToRedeemMaxAmountError ||
+        invalidPointsToRedeem ||
+        pointsToRedeem < state.minAmount;
+
       return {
         ...state,
         pointsToRedeem,
-        pointsToRedeemMaxAmountError: pointsToRedeem > state.maxAmount,
-        invalidPointsToRedeem: isNaN(pointsToRedeem),
+        pointsToRedeemMaxAmountError,
+        invalidPointsToRedeem,
+        isValidForm: !isInvalid,
       };
     }
     default:

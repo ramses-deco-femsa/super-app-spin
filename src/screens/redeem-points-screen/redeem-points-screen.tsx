@@ -1,11 +1,11 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import {View, ScrollView} from 'react-native';
 
 import {StackScreenProps} from '@react-navigation/stack';
 
 import {Alert, Button} from '@digitaltitransversal';
 import {RedeemPointsForm} from '@sas/components';
-import {useAppCtx} from '@sas/context';
+import {RedeemPointsFormConsumer, useAppCtx} from '@sas/context';
 import {RootStackParamList, RouteNames} from '@sas/navigation/navigation.types';
 
 import {styles} from './redeem-points-screen.styles';
@@ -22,12 +22,20 @@ export const RedeemPointsScreen = ({
   navigation,
 }: RedeemPointsScreenProps) => {
   const {createMovement} = useAppCtx();
+  const formRef = useRef<{
+    pointsToRedeem: number;
+    isValid: boolean;
+  }>();
 
   const handleSubmit = async () => {
     try {
+      if (!formRef.current?.isValid) {
+        return;
+      }
+
       const movement = await createMovement({
         entity: brandEntity.entity,
-        points: 150,
+        points: formRef.current!.pointsToRedeem,
       });
 
       navigation.navigate(RouteNames.RedeemPointsSuccessfulScreen, {
@@ -52,6 +60,13 @@ export const RedeemPointsScreen = ({
           <RedeemPointsForm.Shortcuts />
           <RedeemPointsForm.Input />
           <RedeemPointsForm.Warning />
+
+          <RedeemPointsFormConsumer>
+            {({pointsToRedeem, isValidForm}) => {
+              formRef.current = {pointsToRedeem, isValid: isValidForm};
+              return null;
+            }}
+          </RedeemPointsFormConsumer>
         </RedeemPointsForm>
       </ScrollView>
       <View style={styles.buttonFixed}>
