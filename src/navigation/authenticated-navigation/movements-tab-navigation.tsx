@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unstable-nested-components */
-/* eslint-disable react-native/no-inline-styles */
+
 import React from 'react';
 
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
@@ -12,6 +12,7 @@ import {
   MovementsListScreen,
   MovementsUsedScreen,
 } from '@sas/screens';
+import {COLORS} from '@sas/theme';
 
 const Tab = createMaterialTopTabNavigator<RootStackParamList>();
 
@@ -19,10 +20,7 @@ export const MovementsTabNavigation = () => (
   <Tab.Navigator
     initialRouteName={RouteNames.MovementsListTab}
     sceneContainerStyle={{
-      backgroundColor: 'white',
-    }}
-    style={{
-      backgroundColor: 'white',
+      backgroundColor: COLORS.surface_primary,
     }}
     screenOptions={{
       tabBarStyle: {
