@@ -4,7 +4,11 @@ import {View, ScrollView} from 'react-native';
 import {StackScreenProps} from '@react-navigation/stack';
 
 import {Alert, Button} from '@digitaltitransversal';
-import {RedeemPointsForm} from '@sas/components';
+import {
+  RedeemPointsForm,
+  RedeemPointsFormRef,
+  RedeemPointsFormWrapper,
+} from '@sas/components';
 import {RedeemPointsFormConsumer, useAppCtx} from '@sas/context';
 import {RootStackParamList, RouteNames} from '@sas/navigation/navigation.types';
 
@@ -22,24 +26,31 @@ export const RedeemPointsScreen = ({
   navigation,
 }: RedeemPointsScreenProps) => {
   const {createMovement} = useAppCtx();
-  const formRef = useRef<{
-    pointsToRedeem: number;
-    isValid: boolean;
-  }>();
+  const redeemPointsFormRef = useRef<RedeemPointsFormRef | null>(null);
 
   const handleSubmit = async () => {
     try {
-      if (!formRef.current?.isValid) {
+      if (!redeemPointsFormRef.current!.isValidForm) {
         return;
       }
 
       const movement = await createMovement({
         entity: brandEntity.entity,
-        points: formRef.current!.pointsToRedeem,
+        points: redeemPointsFormRef.current!.pointsToRedeem,
       });
 
-      navigation.navigate(RouteNames.RedeemPointsSuccessfulScreen, {
-        movement,
+      navigation.reset({
+        index: 1,
+        routes: [
+          {
+            name: RouteNames.HomeScreen,
+            state: {routes: [{name: RouteNames.BenefitsTab}]},
+          },
+          {
+            name: RouteNames.RedeemPointsSuccessfulScreen,
+            params: {movement},
+          },
+        ],
       });
     } catch (err) {
       Alert.show({
@@ -51,27 +62,31 @@ export const RedeemPointsScreen = ({
   };
 
   return (
-    <View style={styles.container}>
-      <ScrollView
-        style={styles.scrollContainer}
-        contentContainerStyle={styles.scrollContent}>
-        <RedeemPointsForm>
-          <RedeemPointsForm.Header />
-          <RedeemPointsForm.Shortcuts />
-          <RedeemPointsForm.Input />
-          <RedeemPointsForm.Warning />
-
+    <RedeemPointsFormWrapper>
+      <View style={styles.container}>
+        <ScrollView
+          style={styles.scrollContainer}
+          contentContainerStyle={styles.scrollContent}>
+          <RedeemPointsForm ref={redeemPointsFormRef}>
+            <RedeemPointsForm.Header />
+            <RedeemPointsForm.Shortcuts />
+            <RedeemPointsForm.Input />
+            <RedeemPointsForm.Warning />
+          </RedeemPointsForm>
+        </ScrollView>
+        <View style={styles.buttonFixed}>
           <RedeemPointsFormConsumer>
-            {({pointsToRedeem, isValidForm}) => {
-              formRef.current = {pointsToRedeem, isValid: isValidForm};
-              return null;
-            }}
+            {({isValidForm}) => (
+              <Button
+                disabled={!isValidForm}
+                onPress={handleSubmit}
+                text="Continuar"
+                variant="primary"
+              />
+            )}
           </RedeemPointsFormConsumer>
-        </RedeemPointsForm>
-      </ScrollView>
-      <View style={styles.buttonFixed}>
-        <Button onPress={handleSubmit} text="Continuar" variant="primary" />
+        </View>
       </View>
-    </View>
+    </RedeemPointsFormWrapper>
   );
 };

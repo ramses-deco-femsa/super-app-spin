@@ -21,6 +21,7 @@ export const styles = StyleSheet.create({
     tintColor: '#1723D3',
     width: 20,
     height: 20,
+    marginLeft: 4,
   },
   divider: {
     height: 1,
