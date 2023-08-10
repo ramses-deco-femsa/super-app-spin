@@ -1,4 +1,4 @@
-import {NEW_MOVEMENT_DATA} from '@sas/__mocks__';
+import {MOVEMENTS_DATA, NEW_MOVEMENT_DATA} from '@sas/__mocks__';
 import {femsaAPIMock} from '@sas/__mocks__/femsa-api-mock';
 
 import {createMovement} from './create-movement';
@@ -12,13 +12,18 @@ describe('createMovement action', () => {
   });
 
   it('should redeemPoints on endpoint success', async () => {
-    femsaAPIMock.onPost('/history').reply(200, NEW_MOVEMENT_DATA);
+    const movementResponse = {
+      ...MOVEMENTS_DATA[0],
+      ...NEW_MOVEMENT_DATA,
+    };
+    femsaAPIMock.onPost('/history').reply(200, movementResponse);
 
-    await createMovement(dispatch)(NEW_MOVEMENT_DATA);
+    const movement = await createMovement(dispatch)(NEW_MOVEMENT_DATA);
 
     expect(dispatch).toHaveBeenCalledWith(
-      redeemPoints(NEW_MOVEMENT_DATA.points),
+      redeemPoints(movementResponse.points),
     );
+    expect(movement).toEqual(movementResponse);
   });
 
   it('should not dispatch on endpoint fail', async () => {

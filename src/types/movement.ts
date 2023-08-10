@@ -14,4 +14,4 @@ export type MovementsFormatted = {
   data: Movement[];
 };
 
-export type NewMovement = Omit<Movement, 'id'>;
+export type NewMovement = Pick<Movement, 'entity' | 'points'>;
