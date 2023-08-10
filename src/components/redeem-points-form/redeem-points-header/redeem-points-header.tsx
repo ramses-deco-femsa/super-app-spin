@@ -15,7 +15,7 @@ export const RedeemPointsHeader = () => {
   const {t} = useTranslation();
 
   return (
-    <>
+    <View>
       <View style={styles.container}>
         <View style={styles.pointsContainer}>
           <Text style={styles.pointsText}>
@@ -50,6 +50,6 @@ export const RedeemPointsHeader = () => {
           }`}
         />
       </Text>
-    </>
+    </View>
   );
 };
