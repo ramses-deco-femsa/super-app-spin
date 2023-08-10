@@ -68,6 +68,18 @@
           "gas-station": "Gasolina"
         }
       }
+    },
+    "form": {
+      "points": "{{points}} puntos",
+      "worth": "valen {{amount}}",
+      "description": "Escribe el valor de los puntos que quieres cambiar",
+      "description_with_shortcuts": "Elige o escribe el valor de los puntos que quieres cambiar",
+      "warning_minimum_amount": "Recuerda que necesitas tener mínimo {{currency}} en puntos para poder cambiarlos con la marca que elegiste",
+      "input_label": "Monto en pesos",
+      "other": "Otro:",
+      "input_minimum__hint": "El valor mínimo que puedes cambiar es {{amount}}",
+      "input_maximum_hint": "El valor máximo que puedes cambiar es {{amount}}",
+      "amount_to_points": "Equivalen a {{points}} puntos"
     }
   }
 }

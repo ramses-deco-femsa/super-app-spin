@@ -19,6 +19,7 @@ function BaseChip({
   backgroundColor,
   borderColor,
   leftIcon,
+  containerStyle
 }: ChipProps) {
   return (
     <TouchableOpacity
@@ -39,6 +40,7 @@ function BaseChip({
           backgroundColor,
           borderWidth: borderColor ? BORDER_WIDTH : WITHOUT_BORDER_WIDTH,
           opacity: selected ? MIN_OPACITY : MAX_OPACITY,
+          ...(containerStyle as object),
         }}
       >
         {leftIcon && (

@@ -1,8 +1,8 @@
-import {MOVEMENTS_DATA, BRAND_ENTITIES_DATA} from '@sas/__mocks__';
+import {MOVEMENTS_DATA, BRAND_ENTITIES_DATA, USER_DATA} from '@sas/__mocks__';
 import {formatMovementsByDate} from '@sas/utils';
 
 import {appReducer, appInitialState} from './app-reducer';
-import {ActionTypes, Types} from '../actions';
+import {ActionTypes, Types, login, logout, redeemPoints} from '../actions';
 
 describe('app-reducer', () => {
   it('should return default state if action not match', () => {
@@ -13,6 +13,41 @@ describe('app-reducer', () => {
     const newState = appReducer(appInitialState, action);
 
     expect(newState).toEqual(appInitialState);
+  });
+
+  describe('user', () => {
+    it('sets user on login action', () => {
+      const action = login(USER_DATA) as ActionTypes;
+      const newState = appReducer(appInitialState, action);
+
+      expect(newState.user).toEqual(USER_DATA);
+    });
+
+    it('remove user on logout action', () => {
+      const action = logout() as ActionTypes;
+      const state = {...appInitialState, user: USER_DATA};
+      const newState = appReducer(state, action);
+
+      expect(newState.user).toBeNull();
+    });
+
+    describe('redeemPoints', () => {
+      it('should do nothing when user not exists', () => {
+        const action = redeemPoints(150) as ActionTypes;
+        const state = {...appInitialState, user: null};
+        const newState = appReducer(state, action);
+
+        expect(newState.user).toBeNull();
+      });
+
+      it('should update user points when user exists', () => {
+        const action = redeemPoints(150) as ActionTypes;
+        const state = {...appInitialState, user: USER_DATA};
+        const newState = appReducer(state, action);
+
+        expect(newState.user!.points).toBe(USER_DATA.points - 150);
+      });
+    });
   });
 
   describe('movements', () => {

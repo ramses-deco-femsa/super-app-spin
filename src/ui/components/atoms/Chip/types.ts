@@ -39,4 +39,7 @@ export interface ChipProps {
    * @see https://reactnative.dev/docs/image#source
    */
   leftIcon?: ImageSourcePropType;
+
+  /* Styles that are applied to the container of the chip */
+  containerStyle?: StyleProp<ViewStyle>;
 }

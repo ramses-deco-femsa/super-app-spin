@@ -10,3 +10,4 @@ export * from './earn-more-points';
 export * from './rewards-points';
 export * from './movement-detail';
 export * from './advertising-slider';
+export * from './redeem-points-form';

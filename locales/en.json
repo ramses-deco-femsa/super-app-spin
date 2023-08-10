@@ -67,6 +67,18 @@
           "gas-station": "Gas"
         }
       }
+    },
+    "form": {
+      "points": "{{points}} points",
+      "worth": "worth {{amount}}",
+      "description": "Write the value of the points you want to change",
+      "description_with_shortcuts": "Choose or write the value of the points you want to change",
+      "warning_minimum_amount": "Remember that you need to have a minimum of {{currency}} in points to be able to change them with the brand you chose",
+      "input_label": "Amount in pesos",
+      "other": "Other:",
+      "input_minimum__hint": "The minimum value you can redeem is {{amount}}",
+      "input_maximum_hint": "The maximum value you can redeem is {{amount}}",
+      "amount_to_points": "equals {{points}} points"
     }
   }
 }
