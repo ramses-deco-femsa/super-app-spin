@@ -3,8 +3,10 @@ export type RedeemPointsFormState = {
   minAmount: number;
   maxAmount: number;
   pointsToRedeem: number;
-  showWarning: boolean;
   shortcutButtons: number[];
+  pointsToRedeemMaxAmountError: boolean;
+  userPointsMinAmountError: boolean;
+  invalidPointsToRedeem: boolean;
 };
 
 export const initialState: RedeemPointsFormState = {
@@ -12,8 +14,10 @@ export const initialState: RedeemPointsFormState = {
   minAmount: 200,
   maxAmount: 10000,
   pointsToRedeem: 0,
-  showWarning: false,
   shortcutButtons: [],
+  pointsToRedeemMaxAmountError: false,
+  userPointsMinAmountError: false,
+  invalidPointsToRedeem: false,
 };
 
 export enum REDEEM_POINTS_FORM_TYPES {
@@ -50,7 +54,7 @@ export const redeemPointsFormReducer = (
         return {
           ...initialState,
           userPoints,
-          showWarning: true,
+          userPointsMinAmountError: true,
         };
       }
 
@@ -81,6 +85,8 @@ export const redeemPointsFormReducer = (
       return {
         ...state,
         pointsToRedeem,
+        pointsToRedeemMaxAmountError: pointsToRedeem > state.maxAmount,
+        invalidPointsToRedeem: isNaN(pointsToRedeem),
       };
     }
     default:

@@ -17,7 +17,9 @@ export const RedeemPointsForm = ({children}: RedeemPointsFormProps) => {
 
   return (
     <RedeemPointsFormProvider userPoints={user!.points}>
-      <View style={styles.container}>{children}</View>
+      <View testID="redeem-points-form" style={styles.container}>
+        {children}
+      </View>
     </RedeemPointsFormProvider>
   );
 };

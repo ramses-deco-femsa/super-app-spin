@@ -8,10 +8,10 @@ import {COLORS} from '@sas/theme';
 import {formatCurrency} from '@sas/utils';
 
 export const RedeemPointsWarning = () => {
-  const {minAmount, userPoints} = useRedeemPointsFormCtx();
+  const {userPointsMinAmountError, minAmount} = useRedeemPointsFormCtx();
   const {t} = useTranslation();
 
-  if (userPoints >= minAmount) {
+  if (!userPointsMinAmountError) {
     return null;
   }
 

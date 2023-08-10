@@ -33,6 +33,8 @@ type RedeemPointsFormProviderProps = {
   userPoints: number;
 };
 
+export const RedeemPointsFormConsumer = redeemPointsFormContext.Consumer;
+
 export const RedeemPointsFormProvider = ({
   children,
   userPoints,
