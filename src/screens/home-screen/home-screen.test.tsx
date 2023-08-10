@@ -8,6 +8,6 @@ describe('<HomeScreen />', () => {
   it('should render HomeScreen', () => {
     // TODO: improve props passing data
     render(<HomeScreen {...({} as HomeScreenProps)} />);
-    expect(screen.getByText(i18n.t('welcome'))).toBeDefined();
+    expect(screen.getByText(i18n.t('homeScreen.fallback'))).toBeDefined();
   });
 });
