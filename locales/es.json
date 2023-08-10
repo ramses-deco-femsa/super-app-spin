@@ -68,6 +68,12 @@
           "gas-station": "Gasolina"
         }
       }
+    },
+    "form": {
+      "points": "{{points}} puntos",
+      "worth": "valen {{amount}}",
+      "description": "Escribe el valor de los puntos que quieres cambiar",
+      "description_with_shortcuts": "Elige o escribe el valor de los puntos que quieres cambiar"
     }
   }
 }

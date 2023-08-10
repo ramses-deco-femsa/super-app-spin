@@ -1,10 +1,14 @@
 import React from 'react';
-import {View, Button, Text} from 'react-native';
+import {View, ScrollView} from 'react-native';
 
 import {StackScreenProps} from '@react-navigation/stack';
 
+import {Alert, Button} from '@digitaltitransversal';
+import {RedeemPointsForm} from '@sas/components';
 import {useAppCtx} from '@sas/context';
 import {RootStackParamList, RouteNames} from '@sas/navigation/navigation.types';
+
+import {styles} from './redeem-points-screen.styles';
 
 export type RedeemPointsScreenProps = StackScreenProps<
   RootStackParamList,
@@ -19,26 +23,37 @@ export const RedeemPointsScreen = ({
 }: RedeemPointsScreenProps) => {
   const {createMovement} = useAppCtx();
 
-  return (
-    <View>
-      <Text>{brandEntity.entity}</Text>
-      <Button
-        onPress={async () => {
-          try {
-            const movement = await createMovement({
-              entity: brandEntity.entity,
-              points: 150,
-            });
+  const handleSubmit = async () => {
+    try {
+      const movement = await createMovement({
+        entity: brandEntity.entity,
+        points: 150,
+      });
 
-            navigation.navigate(RouteNames.RedeemPointsSuccessfulScreen, {
-              movement,
-            });
-          } catch (err) {
-            console.log(err);
-          }
-        }}
-        title="change points"
-      />
+      navigation.navigate(RouteNames.RedeemPointsSuccessfulScreen, {
+        movement,
+      });
+    } catch (err) {
+      Alert.show({
+        title: 'Something gone wrong',
+        details: (err as Error).message,
+        variant: 'error',
+      });
+    }
+  };
+
+  return (
+    <View style={styles.container}>
+      <ScrollView
+        style={styles.scrollContainer}
+        contentContainerStyle={styles.scrollContent}>
+        <RedeemPointsForm>
+          <RedeemPointsForm.Header />
+        </RedeemPointsForm>
+      </ScrollView>
+      <View style={styles.buttonFixed}>
+        <Button onPress={handleSubmit} text="Continuar" variant="primary" />
+      </View>
     </View>
   );
 };

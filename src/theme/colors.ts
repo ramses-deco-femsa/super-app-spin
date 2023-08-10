@@ -6,4 +6,6 @@ export enum COLORS {
   surface_secondary = '#F5F5F7',
   stroke_secondary = '#E6E6EC',
   active_status = '#1723D3',
+  contextual_points_content = '#006686',
+  contextual_points_surface = '#C9E9F3',
 }

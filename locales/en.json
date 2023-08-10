@@ -67,6 +67,12 @@
           "gas-station": "Gas"
         }
       }
+    },
+    "form": {
+      "points": "{{points}} points",
+      "worth": "worth {{amount}}",
+      "description": "Write the value of the points you want to change",
+      "description_with_shortcuts": "Elige o escribe el valor de los puntos que quieres cambiar"
     }
   }
 }
