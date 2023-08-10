@@ -12,7 +12,14 @@ export const getMovements =
     dispatch({type: MovementTypes.FETCH_MOVEMENTS_REQUEST});
 
     try {
-      const {data} = await femsaAPI.get<Movement[]>('/history');
+      const {data} = await femsaAPI.request<Movement[]>({
+        method: 'GET',
+        url: '/history',
+        params: {
+          _sort: 'id,date',
+          _order: 'desc',
+        },
+      });
 
       dispatch({
         type: MovementTypes.FETCH_MOVEMENTS_SUCCESS,
