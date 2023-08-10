@@ -3,6 +3,7 @@ import React, {ReactNode} from 'react';
 import {RedeemPointsFormProvider, useAppCtx} from '@sas/context';
 
 import {RedeemPointsHeader} from './redeem-points-header';
+import {RedeemPointsShortcuts} from './redeem-points-shortcuts';
 
 type RedeemPointsFormProps = {
   children?: ReactNode;
@@ -19,3 +20,4 @@ export const RedeemPointsForm = ({children}: RedeemPointsFormProps) => {
 };
 
 RedeemPointsForm.Header = RedeemPointsHeader;
+RedeemPointsForm.Shortcuts = RedeemPointsShortcuts;

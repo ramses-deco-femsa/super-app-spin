@@ -49,6 +49,7 @@ export const RedeemPointsScreen = ({
         contentContainerStyle={styles.scrollContent}>
         <RedeemPointsForm>
           <RedeemPointsForm.Header />
+          <RedeemPointsForm.Shortcuts />
         </RedeemPointsForm>
       </ScrollView>
       <View style={styles.buttonFixed}>

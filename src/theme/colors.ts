@@ -8,4 +8,5 @@ export enum COLORS {
   active_status = '#1723D3',
   contextual_points_content = '#006686',
   contextual_points_surface = '#C9E9F3',
+  contextual_info_surface = '#E0E0FF',
 }
