@@ -15,6 +15,15 @@
   "verySoonYouWillBeAbleToEarnMorePointsInTheTotalOfYourPurchase": "Muy pronto podrás ganar más puntos en el total de tu compra",
   "addToBuying": "Suma al comprar",
   "verySoonYouWillBeAbleToAccumulatePurchasesAndTakeGiftProducts": "Muy pronto podrás acumular compras y llevarte productos de regalo",
+  "homeScreen": {
+    "fallback": "Pantalla home"
+  },
+  "benefitsScreen": {
+    "title": "Beneficios"
+  },
+  "walletScreen": {
+    "fallback": "Pantalla walllet"
+  },
   "movements": {
     "tabs": {
       "all": "Todos",
