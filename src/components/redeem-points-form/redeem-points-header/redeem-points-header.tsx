@@ -6,7 +6,7 @@ import {Trans, useTranslation} from 'react-i18next';
 import {Chip, Text} from '@digitaltitransversal';
 import {useRedeemPointsFormCtx} from '@sas/context';
 import {COLORS} from '@sas/theme';
-import {formatNumberWithCommas} from '@sas/utils';
+import {formatCurrency, formatNumberWithCommas} from '@sas/utils';
 
 import {styles} from './redeem-points-header.styles';
 
@@ -31,7 +31,9 @@ export const RedeemPointsHeader = () => {
         </View>
       </View>
       <Chip
-        text={t('redeem_points.form.worth', {amount: userPoints / 10})}
+        text={t('redeem_points.form.worth', {
+          amount: formatCurrency(userPoints / 10),
+        })}
         disabled
         backgroundColor={COLORS.contextual_points_surface}
         borderColor={COLORS.contextual_points_surface}
