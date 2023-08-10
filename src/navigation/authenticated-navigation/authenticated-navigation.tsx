@@ -1,8 +1,8 @@
 import React from 'react';
-import {Platform} from 'react-native';
 
 import {createStackNavigator} from '@react-navigation/stack';
 
+import {ScreenTitle} from '@sas/components';
 import {RootStackParamList, RouteNames} from '@sas/navigation/navigation.types';
 import {
   ChooseBrandEntityScreen,
@@ -10,6 +10,7 @@ import {
   RedeemPointsScreen,
   RedeemPointsSuccessfulScreen,
 } from '@sas/screens';
+import {COLORS} from '@sas/theme';
 
 import {HomeTabNavigation} from './home-tab-navigation';
 import {MovementsTabNavigation} from './movements-tab-navigation';
@@ -20,6 +21,9 @@ export const AuthenticatedNavigation = () => (
   <Stack.Navigator
     initialRouteName={RouteNames.HomeScreen}
     screenOptions={{
+      cardStyle: {
+        backgroundColor: COLORS.surface_primary,
+      },
       headerLeftContainerStyle: {
         paddingLeft: 20,
       },
@@ -27,15 +31,10 @@ export const AuthenticatedNavigation = () => (
         elevation: 0,
         shadowColor: 'transparent',
       },
-      headerBackTitle: 'Movimientos',
-      headerTitle: Platform.OS === 'ios' ? '' : 'Movimientos',
-      headerTitleStyle: {
-        left: -25,
-      },
+      headerBackTitle: ' ',
       headerTitleAlign: 'left',
-      headerBackTitleStyle: {
-        marginLeft: Platform.OS === 'ios' ? 12 : 0,
-      },
+      headerTitle: ScreenTitle,
+      headerTitleContainerStyle: ScreenTitle.styles,
       headerTintColor: 'black',
     }}>
     <Stack.Screen

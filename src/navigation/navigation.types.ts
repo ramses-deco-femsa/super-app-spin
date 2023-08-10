@@ -7,17 +7,17 @@ export enum RouteNames {
   OnboardingScreen = 'OnboardingScreen',
 
   // authenticated
-  HomeScreen = 'HomeScreen',
-  HomeTab = 'Home',
-  BenefitsTab = 'Beneficios',
-  WalletTab = 'Cartera',
-  AccountTab = 'Cuenta',
+  HomeScreen = 'HomeScreenTabNavigation',
+  HomeTab = 'HomeTab',
+  BenefitsTab = 'BenefitsTab',
+  WalletTab = 'WalletTab',
+  AccountTab = 'AccountTab',
 
   MovementDetailScreen = 'MovementDetailScreen',
-  MovementsScreen = 'Movimientos',
-  MovementsListTab = 'Todos',
-  MovementsEarnedTab = 'Ganados',
-  MovementsUsedTab = 'Usados',
+  MovementsScreen = 'MovementsScreenTabNavigation',
+  MovementsListTab = 'MovementsListTab',
+  MovementsEarnedTab = 'MovementsEarnedTab',
+  MovementsUsedTab = 'MovementsUsedTab',
 
   ChooseBrandEntityScreen = 'ChooseBrandEntityScreen',
   RedeemPointsScreen = 'RedeemPointsScreen',

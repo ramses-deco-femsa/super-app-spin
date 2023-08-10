@@ -5,7 +5,6 @@ import {COLORS} from '@sas/theme';
 export const s = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: COLORS.surface_primary,
     padding: 16,
   },
   card: {

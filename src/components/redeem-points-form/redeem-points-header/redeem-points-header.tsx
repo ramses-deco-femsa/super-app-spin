@@ -31,7 +31,7 @@ export const RedeemPointsHeader = () => {
         </View>
       </View>
       <Chip
-        text={t('redeem_points.form.worth', {
+        text={t('redeem_points.form.score', {
           amount: formatCurrency(userPoints / 10),
         })}
         disabled

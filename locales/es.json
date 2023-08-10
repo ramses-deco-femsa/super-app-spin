@@ -15,11 +15,22 @@
   "verySoonYouWillBeAbleToEarnMorePointsInTheTotalOfYourPurchase": "Muy pronto podrás ganar más puntos en el total de tu compra",
   "addToBuying": "Suma al comprar",
   "verySoonYouWillBeAbleToAccumulatePurchasesAndTakeGiftProducts": "Muy pronto podrás acumular compras y llevarte productos de regalo",
+  "navigation": {
+    "screens": {
+      "benefits": "Beneficios",
+      "movements": "Movimientos",
+      "movement_detail": "Detalle del movimiento",
+      "points": "Cambia tus puntos"
+    },
+    "tabs": {
+      "home": "Home",
+      "benefits": "Beneficio",
+      "wallet": "Cartera",
+      "account": "Cuenta"
+    }
+  },
   "homeScreen": {
     "fallback": "Pantalla home"
-  },
-  "benefitsScreen": {
-    "title": "Beneficios"
   },
   "walletScreen": {
     "fallback": "Pantalla walllet"
@@ -71,7 +82,7 @@
     },
     "form": {
       "points": "{{points}} puntos",
-      "worth": "valen {{amount}}",
+      "score": "valen {{amount}}",
       "description": "Escribe el valor de los puntos que quieres cambiar",
       "description_with_shortcuts": "Elige o escribe el valor de los puntos que quieres cambiar",
       "warning_minimum_amount": "Recuerda que necesitas tener mínimo {{currency}} en puntos para poder cambiarlos con la marca que elegiste",
@@ -79,7 +90,8 @@
       "other": "Otro:",
       "input_minimum__hint": "El valor mínimo que puedes cambiar es {{amount}}",
       "input_maximum_hint": "El valor máximo que puedes cambiar es {{amount}}",
-      "amount_to_points": "Equivalen a {{points}} puntos"
+      "amount_to_points": "Equivalen a {{points}} puntos",
+      "continue": "Continuar"
     }
   }
 }

@@ -2,6 +2,7 @@ import React, {useRef} from 'react';
 import {View, ScrollView} from 'react-native';
 
 import {StackScreenProps} from '@react-navigation/stack';
+import {useTranslation} from 'react-i18next';
 
 import {Alert, Button} from '@digitaltitransversal';
 import {
@@ -26,6 +27,7 @@ export const RedeemPointsScreen = ({
   navigation,
 }: RedeemPointsScreenProps) => {
   const {createMovement} = useAppCtx();
+  const {t} = useTranslation();
   const redeemPointsFormRef = useRef<RedeemPointsFormRef | null>(null);
 
   const handleSubmit = async () => {
@@ -80,7 +82,7 @@ export const RedeemPointsScreen = ({
               <Button
                 disabled={!isValidForm}
                 onPress={handleSubmit}
-                text="Continuar"
+                text={t('redeem_points.form.continue')}
                 variant="primary"
               />
             )}
