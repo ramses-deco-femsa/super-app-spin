@@ -9,4 +9,6 @@ export enum COLORS {
   contextual_points_content = '#006686',
   contextual_points_surface = '#C9E9F3',
   contextual_info_surface = '#E0E0FF',
+  contextual_paused_content = '#955000',
+  contextual_paused_surface = '#FFDFBC',
 }

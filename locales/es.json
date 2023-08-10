@@ -73,7 +73,8 @@
       "points": "{{points}} puntos",
       "worth": "valen {{amount}}",
       "description": "Escribe el valor de los puntos que quieres cambiar",
-      "description_with_shortcuts": "Elige o escribe el valor de los puntos que quieres cambiar"
+      "description_with_shortcuts": "Elige o escribe el valor de los puntos que quieres cambiar",
+      "warning_minimum_amount": "Recuerda que necesitas tener mínimo {{currency}} en puntos para poder cambiarlos con la marca que elegiste"
     }
   }
 }

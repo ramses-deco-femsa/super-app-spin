@@ -50,6 +50,7 @@ export const RedeemPointsScreen = ({
         <RedeemPointsForm>
           <RedeemPointsForm.Header />
           <RedeemPointsForm.Shortcuts />
+          <RedeemPointsForm.Warning />
         </RedeemPointsForm>
       </ScrollView>
       <View style={styles.buttonFixed}>

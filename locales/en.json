@@ -72,7 +72,8 @@
       "points": "{{points}} points",
       "worth": "worth {{amount}}",
       "description": "Write the value of the points you want to change",
-      "description_with_shortcuts": "Elige o escribe el valor de los puntos que quieres cambiar"
+      "description_with_shortcuts": "Choose or write the value of the points you want to change",
+      "warning_minimum_amount": "Remember that you need to have a minimum of {{currency}} in points to be able to change them with the brand you chose"
     }
   }
 }
