@@ -15,7 +15,7 @@
   "addToBuying": "Sum when buying",
   "verySoonYouWillBeAbleToAccumulatePurchasesAndTakeGiftProducts": "Very soon you will be able to accumulate purchases and take gift products",
   "navigation": {
-    "screens_title": {
+    "screens": {
       "benefits": "Benefits",
       "movements": "Movements",
       "movement_detail": "Movement Detail",

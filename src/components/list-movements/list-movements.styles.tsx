@@ -7,6 +7,7 @@ export const s = StyleSheet.create({
     minHeight: '100%',
   },
   title: {
+    backgroundColor: COLORS.surface_primary,
     color: COLORS.content_primary,
     fontWeight: '700',
     padding: 16,
