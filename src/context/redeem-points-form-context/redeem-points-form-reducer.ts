@@ -90,7 +90,8 @@ export const redeemPointsFormReducer = (
         state.userPointsMinAmountError ||
         pointsToRedeemMaxAmountError ||
         invalidPointsToRedeem ||
-        pointsToRedeem < state.minAmount;
+        pointsToRedeem < state.minAmount ||
+        pointsToRedeem > state.userPoints;
 
       return {
         ...state,

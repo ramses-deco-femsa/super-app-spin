@@ -24,10 +24,7 @@ export const RedeemPointsHeader = () => {
               values={{points: formatNumberWithCommas(userPoints)}}
             />
           </Text>
-          <Image
-            source={require('../../../ui/assets/info.png')}
-            style={styles.infoIcon}
-          />
+          <Image source={ASSETS_MAPPER.info_icon} style={styles.infoIcon} />
         </View>
       </View>
       <PointsTag

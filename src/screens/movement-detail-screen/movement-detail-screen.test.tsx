@@ -10,7 +10,6 @@ import {
 
 describe('<MovementDetailScreen />', () => {
   it('should render MovementDetailScreen', () => {
-    // TODO: improve props passing data
     render(
       <MovementDetailScreen
         {...({
@@ -19,6 +18,6 @@ describe('<MovementDetailScreen />', () => {
       />,
     );
 
-    expect(screen.getByTestId('movement-detai')).toBeDefined();
+    expect(screen.getByTestId('movement-detail')).toBeDefined();
   });
 });

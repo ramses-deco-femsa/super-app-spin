@@ -4,6 +4,7 @@ import {View} from 'react-native';
 import {Trans} from 'react-i18next';
 
 import {Chip, Text} from '@digitaltitransversal';
+import {ASSETS_MAPPER} from '@sas/constants';
 import {useRedeemPointsFormCtx} from '@sas/context';
 import {COLORS} from '@sas/theme';
 import {formatNumberWithCommas} from '@sas/utils';
@@ -37,6 +38,7 @@ export const RedeemPointsShortcuts = () => {
           key={`redeem-points-shortcut-chip-${pointsValue}`}
           style={styles.item}>
           <Chip
+            testID="redeem-points-shortcut-chip"
             text={'$' + formatNumberWithCommas(amount)}
             onPress={() => {
               setActiveShortcut(pointsValue);
@@ -50,7 +52,7 @@ export const RedeemPointsShortcuts = () => {
               ...(isActive && styles.chipTextActive),
             }}
             containerStyle={styles.chipContainer}
-            leftIcon={require('../../../ui/assets/spark-premia-icon.png')}
+            leftIcon={ASSETS_MAPPER.spark_premia_icon}
           />
           <Text style={styles.pointsText}>
             <Trans

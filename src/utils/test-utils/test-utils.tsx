@@ -1,4 +1,4 @@
-import React, {ReactNode} from 'react';
+import React, {ComponentType, ReactNode} from 'react';
 
 import {NavigationContainer} from '@react-navigation/native';
 import {RenderOptions, render} from '@testing-library/react-native';
@@ -11,15 +11,22 @@ import i18n from '../../../services/i18n';
 
 type AllTheProvidersProps = {
   children: ReactNode;
-  contextState: Partial<AppContext>;
+  contextState?: Partial<AppContext>;
+  Wrapper?: ComponentType<{children: ReactNode}>;
 };
 
-const AllTheProviders = ({children, contextState}: AllTheProvidersProps) => {
+const AllTheProviders = ({
+  children,
+  contextState,
+  Wrapper,
+}: AllTheProvidersProps) => {
   return (
     <NavigationContainer>
       <ThemeProvider>
         <I18nextProvider i18n={i18n}>
-          <AppProvider initialValue={contextState}>{children}</AppProvider>
+          <AppProvider initialValue={contextState}>
+            {Wrapper ? <Wrapper>{children} </Wrapper> : children}
+          </AppProvider>
         </I18nextProvider>
       </ThemeProvider>
     </NavigationContainer>
@@ -31,10 +38,14 @@ const customRender = (
   options?: RenderOptions & Pick<AllTheProvidersProps, 'contextState'>,
 ) =>
   render(ui, {
-    wrapper: props => (
-      <AllTheProviders {...props} contextState={options?.contextState} />
-    ),
     ...options,
+    wrapper: props => (
+      <AllTheProviders
+        {...props}
+        contextState={options?.contextState}
+        Wrapper={options?.wrapper}
+      />
+    ),
   });
 
 // re-export everything

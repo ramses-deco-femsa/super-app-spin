@@ -95,6 +95,7 @@
       }
     },
     "form": {
+      "redeem_points_success_message": "¡Listo! Cambiaste tus puntos",
       "points": "{{points}} puntos",
       "score": "valen {{amount}}",
       "description": "Escribe el valor de los puntos que quieres cambiar",

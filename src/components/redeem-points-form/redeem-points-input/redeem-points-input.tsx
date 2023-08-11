@@ -49,6 +49,7 @@ export const RedeemPointsInput = () => {
       ) : null}
 
       <TextInput
+        testID="redeem-points-input"
         leftSection={<Text>$</Text>}
         editable={!userPointsMinAmountError}
         {...(pointsToRedeemMaxAmountError && {
