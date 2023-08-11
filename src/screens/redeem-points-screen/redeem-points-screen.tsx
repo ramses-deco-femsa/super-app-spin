@@ -4,7 +4,7 @@ import {View, ScrollView} from 'react-native';
 import {StackScreenProps} from '@react-navigation/stack';
 import {useTranslation} from 'react-i18next';
 
-import {Alert, Button} from '@digitaltitransversal';
+import {Button, SnackBar} from '@digitaltitransversal';
 import {
   RedeemPointsForm,
   RedeemPointsFormRef,
@@ -55,10 +55,12 @@ export const RedeemPointsScreen = ({
         ],
       });
     } catch (err) {
-      Alert.show({
-        title: 'Something gone wrong',
-        details: (err as Error).message,
+      SnackBar.show({
+        text: (err as Error).message,
         variant: 'error',
+        withIcon: true,
+        iconName: 'icon-close',
+        duration: 4000,
       });
     }
   };

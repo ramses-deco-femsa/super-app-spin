@@ -4,7 +4,6 @@
     "logout": "Logout",
     "version": "Version"
   },
-  "change-language": "Change language",
   "welcome": "Weolcome to spin by oxxo",
   "check": "Check",
   "yourHistory": "Your history",
@@ -42,6 +41,7 @@
   "account": {
     "change_language": "Change language to spanish",
     "other_actions": "Other actions",
+    "logout_success_message": "Done! you closed your session",
     "confirm_modal": {
       "title": "Do you want to log out?",
       "subtitle": "Remember that you can re-enter the app whenever you want",

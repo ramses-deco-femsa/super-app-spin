@@ -41,6 +41,7 @@
   "account": {
     "change_language": "Cambiar idioma a ingles",
     "other_actions": "Otras acciones",
+    "logout_success_message": "¡Listo! Cerraste tu sesión",
     "confirm_modal": {
       "title": "¿Quieres cerrar tu sesión?",
       "subtitle": "Recuerda que puedes volver a entrar a la app cuando quieras",

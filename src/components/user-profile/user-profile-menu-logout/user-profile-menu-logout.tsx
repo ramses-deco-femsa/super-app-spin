@@ -3,7 +3,7 @@ import {Image, Pressable} from 'react-native';
 
 import {Trans, useTranslation} from 'react-i18next';
 
-import {Text, TwoButtonModal} from '@digitaltitransversal';
+import {SnackBar, Text, TwoButtonModal} from '@digitaltitransversal';
 import {ASSETS_MAPPER} from '@sas/constants';
 import {useAppCtx} from '@sas/context';
 
@@ -17,6 +17,17 @@ export const UserProfileMenuLogout = () => {
 
   const toggleModal = () => {
     setShowModal(!showModal);
+  };
+
+  const handleLogout = () => {
+    logout();
+    SnackBar.show({
+      text: t('account.logout_success_message'),
+      variant: 'success',
+      withIcon: true,
+      iconName: 'icon-send',
+      duration: 4000,
+    });
   };
 
   return (
@@ -36,7 +47,7 @@ export const UserProfileMenuLogout = () => {
         onCallbackClose={toggleModal}
         firstButtonProps={{
           text: t('account.confirm_modal.confirm'),
-          onPress: logout,
+          onPress: handleLogout,
         }}
         secondButtonProps={{
           text: t('account.confirm_modal.cancel'),
