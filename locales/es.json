@@ -1,13 +1,15 @@
 {
-  "change-language": "en",
+  "general": {
+    "points": "puntos",
+    "logout": "Cierra sesión",
+    "version": "Versión"
+  },
   "welcome": "Bienvenido a spin",
-  "benefits": "Beneficios",
   "check": "Consulta",
   "yourHistory": "tu historial",
   "changePoints": "Cambia tus puntos",
   "youHave": "Tienes",
   "score": "Valen",
-  "points": "Puntos",
   "winFreeProducts": "ganar productos de regalo",
   "verySoonYoWillBeAbleToAccumulateYouPoints": "Muy pronto podrás sumar tus compras y",
   "accumulatePoints": "Acumula puntos",
@@ -20,7 +22,8 @@
       "benefits": "Beneficios",
       "movements": "Movimientos",
       "movement_detail": "Detalle del movimiento",
-      "points": "Cambia tus puntos"
+      "points": "Cambia tus puntos",
+      "account": "Cuenta"
     },
     "tabs": {
       "home": "Home",
@@ -34,6 +37,17 @@
   },
   "walletScreen": {
     "fallback": "Pantalla walllet"
+  },
+  "account": {
+    "change_language": "Cambiar idioma a ingles",
+    "other_actions": "Otras acciones",
+    "logout_success_message": "¡Listo! Cerraste tu sesión",
+    "confirm_modal": {
+      "title": "¿Quieres cerrar tu sesión?",
+      "subtitle": "Recuerda que puedes volver a entrar a la app cuando quieras",
+      "confirm": "Sí, cerrar sesión",
+      "cancel": "En otro momento"
+    }
   },
   "movements": {
     "tabs": {

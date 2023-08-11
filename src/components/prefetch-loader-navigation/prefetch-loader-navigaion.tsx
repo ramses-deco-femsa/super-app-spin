@@ -1,7 +1,7 @@
 import React, {ReactNode} from 'react';
 import {useEffect} from 'react';
 
-import {Alert} from '@digitaltitransversal';
+import {SnackBar} from '@digitaltitransversal';
 
 import {FullPageActivityIndicator} from '../full-page-activity-indicator';
 
@@ -35,10 +35,12 @@ export const PrefetchLoaderNavigator = ({
 
   useEffect(() => {
     if (error) {
-      Alert.show({
-        title: 'Something gone wrong',
-        details: error,
+      SnackBar.show({
+        text: error,
         variant: 'error',
+        withIcon: true,
+        iconName: 'icon-close',
+        duration: 4000,
       });
     }
   }, [error]);

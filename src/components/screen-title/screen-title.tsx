@@ -15,6 +15,7 @@ export const ScreenTitle = ({children}: ScreenTitleProps) => {
       case RouteNames.BenefitsTab:
         return 'navigation.screens.benefits';
       case RouteNames.MovementsEarnedTab:
+      case RouteNames.MovementsListTab:
       case RouteNames.MovementsUsedTab:
       case RouteNames.MovementsScreen:
         return 'navigation.screens.movements';
@@ -24,6 +25,8 @@ export const ScreenTitle = ({children}: ScreenTitleProps) => {
       case RouteNames.RedeemPointsSuccessfulScreen:
       case RouteNames.MovementDetailScreen:
         return 'navigation.screens.movement_detail';
+      case RouteNames.AccountTab:
+        return 'navigation.screens.account';
       default:
         return children;
     }

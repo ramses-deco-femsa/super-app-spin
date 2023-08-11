@@ -1,12 +1,15 @@
 {
-  "change-language": "Change language",
+  "general": {
+    "points": "Points",
+    "logout": "Logout",
+    "version": "Version"
+  },
   "welcome": "Weolcome to spin by oxxo",
   "check": "Check",
   "yourHistory": "Your history",
   "changePoints": "Change your points",
   "youHave": "You have",
   "score": "Score",
-  "points": "Points",
   "winFreeProducts": "Win free products",
   "verySoonYoWillBeAbleToAccumulateYouPoints": "Very soon you will be able to accumulate your points",
   "accumulatePoints": "accumulate points",
@@ -15,11 +18,12 @@
   "addToBuying": "Sum when buying",
   "verySoonYouWillBeAbleToAccumulatePurchasesAndTakeGiftProducts": "Very soon you will be able to accumulate purchases and take gift products",
   "navigation": {
-    "screens_title": {
+    "screens": {
       "benefits": "Benefits",
       "movements": "Movements",
       "movement_detail": "Movement Detail",
-      "points": "Change your points"
+      "points": "Change your points",
+      "account": "Account"
     },
     "tabs": {
       "home": "Home",
@@ -33,6 +37,17 @@
   },
   "walletScreen": {
     "fallback": "Screen walllet"
+  },
+  "account": {
+    "change_language": "Change language to spanish",
+    "other_actions": "Other actions",
+    "logout_success_message": "Done! you closed your session",
+    "confirm_modal": {
+      "title": "Do you want to log out?",
+      "subtitle": "Remember that you can re-enter the app whenever you want",
+      "confirm": "Yes, log out",
+      "cancel": "Some other time"
+    }
   },
   "movements": {
     "tabs": {

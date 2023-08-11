@@ -3,9 +3,9 @@ import {Image, View} from 'react-native';
 
 import {Trans, useTranslation} from 'react-i18next';
 
-import {Chip, Text} from '@digitaltitransversal';
+import {PointsTag, Text} from '@digitaltitransversal';
+import {ASSETS_MAPPER} from '@sas/constants';
 import {useRedeemPointsFormCtx} from '@sas/context';
-import {COLORS} from '@sas/theme';
 import {formatCurrency, formatNumberWithCommas} from '@sas/utils';
 
 import {styles} from './redeem-points-header.styles';
@@ -30,15 +30,12 @@ export const RedeemPointsHeader = () => {
           />
         </View>
       </View>
-      <Chip
+      <PointsTag
+        size="large"
+        leftIcon={ASSETS_MAPPER.spark_premia_icon}
         text={t('redeem_points.form.score', {
           amount: formatCurrency(userPoints / 10),
         })}
-        disabled
-        backgroundColor={COLORS.contextual_points_surface}
-        borderColor={COLORS.contextual_points_surface}
-        textStyle={styles.chipText}
-        leftIcon={require('../../../ui/assets/spark-premia-icon.png')}
       />
       <View style={styles.divider} />
       <Text>

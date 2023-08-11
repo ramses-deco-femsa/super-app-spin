@@ -25,6 +25,8 @@ const jestConfig: JestConfigWithTsJest = {
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
   collectCoverageFrom: [
     '**/*{ts,tsx}',
+    '!**/index.ts',
+    '!**/*.styles.{ts,tsx}',
     '!jest.config.ts',
     '!<rootDir>/src/ui/**',
   ],

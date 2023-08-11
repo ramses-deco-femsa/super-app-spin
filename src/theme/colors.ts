@@ -12,4 +12,5 @@ export enum COLORS {
   contextual_info_surface = '#E0E0FF',
   contextual_paused_content = '#955000',
   contextual_paused_surface = '#FFDFBC',
+  content_inverse_secondary = '#B4B4C5',
 }

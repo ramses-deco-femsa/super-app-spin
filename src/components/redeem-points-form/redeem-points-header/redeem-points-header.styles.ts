@@ -28,7 +28,14 @@ export const styles = StyleSheet.create({
     backgroundColor: COLORS.stroke_secondary,
     marginVertical: 16,
   },
+  chipContainer: {
+    display: 'flex',
+    width: 'auto',
+    flex: 0,
+    flexGrow: 0,
+  },
   chipText: {
+    width: 'auto',
     color: COLORS.contextual_points_content,
     fontSize: 14,
   },

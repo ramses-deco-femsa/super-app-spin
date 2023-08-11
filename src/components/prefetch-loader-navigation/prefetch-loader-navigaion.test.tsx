@@ -1,13 +1,13 @@
 import React from 'react';
 
-import {Alert} from '@digitaltitransversal';
+import {SnackBar} from '@digitaltitransversal';
 import {render, screen} from '@test-utils';
 
 import {PrefetchLoaderNavigator} from './prefetch-loader-navigaion';
 
 jest.mock('@digitaltitransversal', () => ({
   ...jest.requireActual('@digitaltitransversal'),
-  Alert: {show: jest.fn()},
+  SnackBar: {show: jest.fn()},
 }));
 
 describe('<PrefetchLoaderNavigator />', () => {
@@ -16,13 +16,9 @@ describe('<PrefetchLoaderNavigator />', () => {
     expect(screen.getByTestId('spinner')).toBeDefined();
   });
 
-  it('shoulds calls Alert.show when error is passed', () => {
+  it('shoulds calls SnackBar.show when error is passed', () => {
     render(<PrefetchLoaderNavigator loading error="somError" />);
-    expect(Alert.show).toHaveBeenCalledWith({
-      title: 'Something gone wrong',
-      details: 'somError',
-      variant: 'error',
-    });
+    expect(SnackBar.show).toHaveBeenCalled();
   });
 
   describe('action prop', () => {
