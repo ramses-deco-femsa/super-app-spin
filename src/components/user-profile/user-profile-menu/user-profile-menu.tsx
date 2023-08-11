@@ -10,7 +10,7 @@ import {UserProfileMenuLanguage} from '../user-profile-menu-language';
 import {UserProfileMenuLogout} from '../user-profile-menu-logout';
 
 type UserProfileMenuProps = {
-  children: ReactNode;
+  children?: ReactNode;
 };
 
 export const UserProfileMenu = ({children}: UserProfileMenuProps) => {
@@ -21,7 +21,11 @@ export const UserProfileMenu = ({children}: UserProfileMenuProps) => {
 
       <View>
         {React.Children.map(children, child => (
-          <View style={styles.menutItem}>{child}</View>
+          <View
+            testID="user-profile-menu-item-wrapper"
+            style={styles.menutItem}>
+            {child}
+          </View>
         ))}
       </View>
     </View>

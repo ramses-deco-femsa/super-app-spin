@@ -23,7 +23,7 @@ export const UserProfileHeader = () => {
           size="small"
           leftIcon={ASSETS_MAPPER.spark_premia_icon}
           text={t('redeem_points.form.points', {
-            points: formatNumberWithCommas(user!.points / 10),
+            points: formatNumberWithCommas(user!.points),
           })}
         />
       </View>

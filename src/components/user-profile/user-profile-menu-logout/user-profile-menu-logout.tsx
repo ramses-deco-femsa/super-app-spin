@@ -32,7 +32,10 @@ export const UserProfileMenuLogout = () => {
 
   return (
     <>
-      <Pressable onPress={toggleModal} style={styles.menuItem}>
+      <Pressable
+        testID="user-profile-menu-logout-btn"
+        onPress={toggleModal}
+        style={styles.menuItem}>
         <Image style={styles.icon} source={ASSETS_MAPPER.logout} />
         <Text variant="default-body">
           <Trans i18nKey="general.logout" />

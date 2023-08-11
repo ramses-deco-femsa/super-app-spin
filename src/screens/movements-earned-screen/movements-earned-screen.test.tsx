@@ -1,5 +1,6 @@
 import React from 'react';
 
+import {MOVEMENTS_DATA, MOVEMENTS_FORMATTED_DATA} from '@sas/__mocks__';
 import {render} from '@test-utils';
 
 import {
@@ -8,8 +9,20 @@ import {
 } from './movements-earned-screen';
 
 describe('<MovementsEarnedScreen />', () => {
-  it('should render MovementsEarnedScreen', () => {
-    // TODO: improve props passing data
-    render(<MovementsEarnedScreen {...({} as MovementsEarnedScreenProps)} />);
+  it('should calls getMovements', () => {
+    const getMovementsMock = jest.fn();
+
+    render(<MovementsEarnedScreen {...({} as MovementsEarnedScreenProps)} />, {
+      contextState: {
+        getMovements: getMovementsMock,
+        movements: {
+          loading: false,
+          dataFormmated: MOVEMENTS_FORMATTED_DATA,
+          data: MOVEMENTS_DATA,
+        },
+      },
+    });
+
+    expect(getMovementsMock).toHaveBeenCalled();
   });
 });

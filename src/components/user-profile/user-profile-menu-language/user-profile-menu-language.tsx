@@ -15,7 +15,10 @@ export const UserProfileMenuLanguage = () => {
   };
 
   return (
-    <Pressable onPress={toggleLanguage} style={styles.menuItem}>
+    <Pressable
+      testID="user-progile-menu-language-btn"
+      onPress={toggleLanguage}
+      style={styles.menuItem}>
       <Text variant="default-body">
         <Trans i18nKey="account.change_language" />
       </Text>

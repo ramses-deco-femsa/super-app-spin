@@ -29,4 +29,14 @@ jest.mock('@gorhom/bottom-sheet', () => {
 
   return {BottomSheetFlatList: react.FlatList};
 });
+
+jest.mock('@digitaltitransversal', () => {
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const react = require('react-native');
+
+  return {
+    ...jest.requireActual('@digitaltitransversal'),
+    BannerCarousel: react.View,
+  };
+});
 // ------------------------------------------------------------------------------
