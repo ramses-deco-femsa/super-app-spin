@@ -1,10 +1,12 @@
 import React from 'react';
-import {ActivityIndicator, View} from 'react-native';
+import {View} from 'react-native';
+
+import {Spinner} from '@digitaltitransversal';
 
 import {s} from './full-page-activity-indicator.styles';
 
 export const FullPageActivityIndicator = () => (
   <View style={s.container}>
-    <ActivityIndicator testID="spinner" size="large" />
+    <Spinner testID="spinner" />
   </View>
 );
