@@ -18,8 +18,7 @@ export const CheckPoints = () => {
       <View>
         <Text style={s.labelHeader}>{t('youHave')}</Text>
         <Text style={s.resumePoints}>
-          {formatNumberWithCommas(user!.points)}{' '}
-          {t('points').toLocaleLowerCase()}
+          {formatNumberWithCommas(user!.points)} {t('general.points')}
         </Text>
         <View style={s.pillContainer}>
           <View style={s.sparkIconContainer}>

@@ -1,5 +1,6 @@
 import React from 'react';
 
+import {USER_DATA} from '@sas/__mocks__';
 import {render, screen} from '@test-utils';
 
 import {AccountScreen, AccountScreenProps} from './account-screen';
@@ -7,7 +8,11 @@ import {AccountScreen, AccountScreenProps} from './account-screen';
 describe('<AccountScreen />', () => {
   it('should render AccountScreen', () => {
     // TODO: improve props passing data
-    render(<AccountScreen {...({} as AccountScreenProps)} />);
-    expect(screen.getByText(/AccountScreen/i)).toBeDefined();
+    render(<AccountScreen {...({} as AccountScreenProps)} />, {
+      contextState: {
+        user: USER_DATA,
+      },
+    });
+    expect(screen.getByText(USER_DATA.name)).toBeDefined();
   });
 });

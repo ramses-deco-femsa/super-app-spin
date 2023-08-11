@@ -12,3 +12,4 @@ export * from './movement-detail';
 export * from './advertising-slider';
 export * from './redeem-points-form';
 export * from './screen-title';
+export * from './user-profile';

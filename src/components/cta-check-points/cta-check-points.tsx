@@ -2,7 +2,7 @@ import React from 'react';
 import {Image, View, useWindowDimensions} from 'react-native';
 
 import {useNavigation} from '@react-navigation/native';
-import {Trans} from 'react-i18next';
+import {Trans, useTranslation} from 'react-i18next';
 
 import {Text} from '@digitaltitransversal';
 import {
@@ -15,6 +15,7 @@ import {s} from './cta-check-points.styles';
 
 export const CtaCheckPoints = () => {
   const {navigate} = useNavigation<StackNavigationProps>();
+  const {t} = useTranslation();
 
   const {width} = useWindowDimensions();
   const cardWidth = width / 2 - 24;
@@ -30,12 +31,8 @@ export const CtaCheckPoints = () => {
         onPress={() => navigate(RouteNames.MovementsScreen)}>
         <View style={s.contentCard}>
           <Image source={require('../../ui/assets/Media/history-card.png')} />
-          <Text style={s.titleCard}>
-            <Trans i18nKey="check" />
-          </Text>
-          <Text style={s.titleCard}>
-            <Trans i18nKey="yourHistory" />
-          </Text>
+          <Text style={s.titleCard}>{t('check')}</Text>
+          <Text style={s.titleCard}>{t('yourHistory')}</Text>
         </View>
       </BaseCard>
       <BaseCard

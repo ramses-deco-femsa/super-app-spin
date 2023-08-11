@@ -1,4 +1,6 @@
 // Components
+export {default as TwoButtonModal} from './components/atoms/Modal/TwoButtonModal';
+export {default as PointsTag}  from './components/atoms/Tag/PointsTag';
 export {default as Text} from './components/Text/Text';
 export {default as Button} from './components/Button/Button';
 export {default as Card} from './components/Card/Card';
@@ -53,3 +55,5 @@ export {default as ThemeProvider} from './theme/ThemeProvider';
 // Hooks
 export {default as useTheme} from './hooks/useTheme';
 export {default as useThemedStyles} from './hooks/useThemedStyles';
+
+

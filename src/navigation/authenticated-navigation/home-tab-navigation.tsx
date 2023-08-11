@@ -86,7 +86,6 @@ export const HomeTabNavigation = () => {
       <Tab.Screen
         name={RouteNames.AccountTab}
         options={{
-          headerShown: false,
           tabBarLabel: t('navigation.tabs.account'),
           tabBarIcon: () => (
             <Image
