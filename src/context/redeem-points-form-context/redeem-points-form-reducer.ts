@@ -4,6 +4,7 @@ export type RedeemPointsFormState = {
   maxAmount: number;
   pointsToRedeem: number;
   shortcutButtons: number[];
+  insufficientPointsToRedeemError: boolean;
   pointsToRedeemMaxAmountError: boolean;
   userPointsMinAmountError: boolean;
   invalidPointsToRedeem: boolean;
@@ -16,6 +17,7 @@ export const initialState: RedeemPointsFormState = {
   maxAmount: 10000,
   pointsToRedeem: 0,
   shortcutButtons: [],
+  insufficientPointsToRedeemError: false,
   pointsToRedeemMaxAmountError: false,
   userPointsMinAmountError: false,
   invalidPointsToRedeem: false,
@@ -86,15 +88,18 @@ export const redeemPointsFormReducer = (
 
       const pointsToRedeemMaxAmountError = pointsToRedeem > state.maxAmount;
       const invalidPointsToRedeem = isNaN(pointsToRedeem);
+      const insufficientPointsToRedeemError = pointsToRedeem > state.userPoints;
       const isInvalid =
         state.userPointsMinAmountError ||
         pointsToRedeemMaxAmountError ||
         invalidPointsToRedeem ||
-        pointsToRedeem < state.minAmount;
+        pointsToRedeem < state.minAmount ||
+        insufficientPointsToRedeemError;
 
       return {
         ...state,
         pointsToRedeem,
+        insufficientPointsToRedeemError,
         pointsToRedeemMaxAmountError,
         invalidPointsToRedeem,
         isValidForm: !isInvalid,

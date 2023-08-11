@@ -32,13 +32,17 @@ export const RedeemPointsScreen = ({
 
   const handleSubmit = async () => {
     try {
-      if (!redeemPointsFormRef.current!.isValidForm) {
-        return;
-      }
-
       const movement = await createMovement({
         entity: brandEntity.entity,
         points: redeemPointsFormRef.current!.pointsToRedeem,
+      });
+
+      SnackBar.show({
+        text: t('redeem_points.form.redeem_points_success_message'),
+        variant: 'info',
+        withIcon: true,
+        iconName: 'icon-send',
+        duration: 4000,
       });
 
       navigation.reset({
@@ -82,6 +86,7 @@ export const RedeemPointsScreen = ({
           <RedeemPointsFormConsumer>
             {({isValidForm}) => (
               <Button
+                testID="redeem-points-btn-submit"
                 disabled={!isValidForm}
                 onPress={handleSubmit}
                 text={t('redeem_points.form.continue')}

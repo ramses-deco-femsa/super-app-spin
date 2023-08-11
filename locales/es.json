@@ -95,6 +95,7 @@
       }
     },
     "form": {
+      "redeem_points_success_message": "¡Listo! Cambiaste tus puntos",
       "points": "{{points}} puntos",
       "score": "valen {{amount}}",
       "description": "Escribe el valor de los puntos que quieres cambiar",
@@ -103,7 +104,8 @@
       "input_label": "Monto en pesos",
       "other": "Otro:",
       "input_minimum__hint": "El valor mínimo que puedes cambiar es {{amount}}",
-      "input_maximum_hint": "El valor máximo que puedes cambiar es {{amount}}",
+      "input_maximum_error": "El valor máximo que puedes cambiar es {{amount}}",
+      "input_insufficient_points_error": "No tienes suficientes puntos disponibles ({{amount}})",
       "amount_to_points": "Equivalen a {{points}} puntos",
       "continue": "Continuar"
     }

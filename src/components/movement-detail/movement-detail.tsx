@@ -19,7 +19,7 @@ export const MovementDetail = ({movement}: MovementDetailProps) => {
   dateFrom.setMonth(dateFrom.getMonth() + 3);
 
   return (
-    <View testID="movement-detai" style={s.container}>
+    <View testID="movement-detail" style={s.container}>
       <Card style={s.card}>
         <>
           <View style={s.imageContainer}>

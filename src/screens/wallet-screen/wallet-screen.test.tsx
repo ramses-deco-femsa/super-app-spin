@@ -7,7 +7,6 @@ import {WalletScreen, WalletScreenProps} from './wallet-screen';
 
 describe('<WalletScreen />', () => {
   it('should render WalletScreen', () => {
-    // TODO: improve props passing data
     render(<WalletScreen {...({} as WalletScreenProps)} />);
     expect(screen.getByText(i18n.t('walletScreen.fallback'))).toBeDefined();
   });

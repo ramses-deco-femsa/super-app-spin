@@ -7,7 +7,6 @@ import {AccountScreen, AccountScreenProps} from './account-screen';
 
 describe('<AccountScreen />', () => {
   it('should render AccountScreen', () => {
-    // TODO: improve props passing data
     render(<AccountScreen {...({} as AccountScreenProps)} />, {
       contextState: {
         user: USER_DATA,

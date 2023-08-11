@@ -95,6 +95,7 @@
       }
     },
     "form": {
+      "redeem_points_success_message": "Done! you changed your points",
       "points": "{{points}} points",
       "score": "score {{amount}}",
       "description": "Write the value of the points you want to change",
@@ -104,6 +105,7 @@
       "other": "Other:",
       "input_minimum__hint": "The minimum value you can redeem is {{amount}}",
       "input_maximum_hint": "The maximum value you can redeem is {{amount}}",
+      "input_insufficient_points_error": "Insufficient points available ({{amount}})",
       "amount_to_points": "equals {{points}} points",
       "continue": "Continue"
     }
