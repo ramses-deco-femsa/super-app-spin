@@ -13,8 +13,10 @@ export const RedeemPointsInput = () => {
   const {
     minAmount,
     maxAmount,
+    userPoints,
     pointsToRedeem,
     setPointsToRedeem,
+    insufficientPointsToRedeemError,
     userPointsMinAmountError,
     pointsToRedeemMaxAmountError,
     shortcutButtons,
@@ -40,6 +42,24 @@ export const RedeemPointsInput = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pointsToRedeem]);
 
+  const buildErrorMessage = () => {
+    if (pointsToRedeemMaxAmountError && userPoints >= maxAmount) {
+      return t('redeem_points.form.input_maximum_error', {
+        amount: formatCurrency(maxAmount / 10),
+      });
+    }
+
+    if (insufficientPointsToRedeemError) {
+      return t('redeem_points.form.input_insufficient_points_error', {
+        amount: formatCurrency(userPoints / 10),
+      });
+    }
+
+    return '';
+  };
+
+  const errorMessage = buildErrorMessage();
+
   return (
     <View>
       {shortcutButtons.length ? (
@@ -52,10 +72,8 @@ export const RedeemPointsInput = () => {
         testID="redeem-points-input"
         leftSection={<Text>$</Text>}
         editable={!userPointsMinAmountError}
-        {...(pointsToRedeemMaxAmountError && {
-          error: t('redeem_points.form.input_maximum_hint', {
-            amount: formatCurrency(maxAmount / 10),
-          }),
+        {...(errorMessage && {
+          error: errorMessage,
         })}
         label={t('redeem_points.form.input_label')}
         value={inputValue}
@@ -63,7 +81,7 @@ export const RedeemPointsInput = () => {
         variant="numeric"
         placeholder={t('redeem_points.form.input_label')}
       />
-      {!pointsToRedeemMaxAmountError && (
+      {!errorMessage && (
         <Text style={styles.hint}>
           <Trans
             i18nKey="redeem_points.form.input_minimum__hint"

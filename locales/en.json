@@ -105,6 +105,7 @@
       "other": "Other:",
       "input_minimum__hint": "The minimum value you can redeem is {{amount}}",
       "input_maximum_hint": "The maximum value you can redeem is {{amount}}",
+      "input_insufficient_points_error": "Insufficient points available ({{amount}})",
       "amount_to_points": "equals {{points}} points",
       "continue": "Continue"
     }

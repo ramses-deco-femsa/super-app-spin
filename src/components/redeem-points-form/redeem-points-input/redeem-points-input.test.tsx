@@ -74,4 +74,50 @@ describe('<RedeemPointsInput />', () => {
     fireEvent.press(shortcutBtn50Amount);
     expect(input).toHaveProp('value', '50');
   });
+
+  describe('errors', () => {
+    it('should show error if input value is higher than the max amount and user points has higher the the max amount', () => {
+      render(<RedeemPointsInput />, {
+        contextState: {
+          user: {
+            ...USER_DATA,
+            points: 10000,
+          },
+        },
+        wrapper: RedeemPointsFormWrapper,
+      });
+
+      const input = screen.getByTestId('redeem-points-input');
+      fireEvent.changeText(input, '1001'); //10010 points
+      expect(
+        screen.getByText(
+          i18n.t('redeem_points.form.input_maximum_error', {
+            amount: '$1,000.00',
+          }),
+        ),
+      ).toBeDefined();
+    });
+
+    it('should show error if input value is higher than user points', () => {
+      render(<RedeemPointsInput />, {
+        contextState: {
+          user: {
+            ...USER_DATA,
+            points: 500,
+          },
+        },
+        wrapper: RedeemPointsFormWrapper,
+      });
+
+      const input = screen.getByTestId('redeem-points-input');
+      fireEvent.changeText(input, '51'); //510 points
+      expect(
+        screen.getByText(
+          i18n.t('redeem_points.form.input_insufficient_points_error', {
+            amount: '$50.00',
+          }),
+        ),
+      ).toBeDefined();
+    });
+  });
 });
