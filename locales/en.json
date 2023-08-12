@@ -32,6 +32,12 @@
       "account": "Account"
     }
   },
+  "login": {
+    "title": "Do your day-to-day operations wherever you are",
+    "phone_number": "Mobile number",
+    "terms_and_conditions": "By continuing you acknowledge that you are of legal age, as well as having read and accepted our Terms and Conditions and our Privacy Notice",
+    "submit": "Begin"
+  },
   "homeScreen": {
     "fallback": "Screen home"
   },

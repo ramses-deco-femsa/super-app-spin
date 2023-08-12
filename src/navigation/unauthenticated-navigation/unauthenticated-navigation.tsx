@@ -7,7 +7,9 @@ import {LoginScreen} from '@sas/screens';
 
 const Stack = createStackNavigator<RootStackParamList>();
 export const UnauthenticatedNavigation = () => (
-  <Stack.Navigator initialRouteName={RouteNames.LoginScreen}>
+  <Stack.Navigator
+    initialRouteName={RouteNames.LoginScreen}
+    screenOptions={{headerShown: false}}>
     <Stack.Screen name={RouteNames.LoginScreen} component={LoginScreen} />
   </Stack.Navigator>
 );

@@ -32,6 +32,12 @@
       "account": "Cuenta"
     }
   },
+  "login": {
+    "title": "Haz tus operaciones del día a día estés dónde estés",
+    "phone_number": "Número de celular",
+    "terms_and_conditions": "Al continuar reconoces ser mayor de edad, así como haber leído y aceptado nuestros Términos y Condiciones y nuestro Aviso de privacidad",
+    "submit": "Comenzar"
+  },
   "homeScreen": {
     "fallback": "Pantalla home"
   },
