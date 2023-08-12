@@ -1,13 +1,13 @@
 import type {User} from '@sas/types';
 
 export enum UserTypes {
-  LOGIN = 'LOGIN',
+  SET_USER = 'SET_USER',
   LOGOUT = 'LOGOUT',
   REDEEM_POINTS = 'REDEEM_POINTS',
 }
 
-type LoginAction = {
-  type: UserTypes.LOGIN;
+type SetUserAction = {
+  type: UserTypes.SET_USER;
   payload: {user: User};
 };
 
@@ -20,4 +20,4 @@ type RedeemPointsAction = {
   payload: {points: number};
 };
 
-export type UserActions = LoginAction | LogoutAction | RedeemPointsAction;
+export type UserActions = SetUserAction | LogoutAction | RedeemPointsAction;

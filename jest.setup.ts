@@ -18,6 +18,12 @@ jest.mock('@react-native-async-storage/async-storage', () =>
   require('@react-native-async-storage/async-storage/jest/async-storage-mock'),
 );
 
+// TODO: in order to render views without wait until storage data is loaded
+jest.mock('@sas/hooks', () => ({
+  ...jest.requireActual('@sas/hooks'),
+  useStorage: () => ({isLoading: false}),
+}));
+
 // mock for ui ------------------------------------------------------------------------------
 jest.mock('react-native-otp-verify', () => ({
   useOtpVerify: jest.fn(() => ({hash: '', otp: '', message: ''})),

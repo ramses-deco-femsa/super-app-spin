@@ -1,7 +1,7 @@
 import {BRAND_ENTITIES_DATA, USER_DATA} from '@sas/__mocks__';
 
 import {appReducer, appInitialState} from './app-reducer';
-import {ActionTypes, Types, login, logout} from '../actions';
+import {ActionTypes, Types, setUser, logout} from '../actions';
 
 describe('app-reducer', () => {
   it('should return default state if action not match', () => {
@@ -15,8 +15,8 @@ describe('app-reducer', () => {
   });
 
   describe('user', () => {
-    it('sets user on login action', () => {
-      const action = login(USER_DATA) as ActionTypes;
+    it('sets user on setUser action', () => {
+      const action = setUser(USER_DATA) as ActionTypes;
       const newState = appReducer(appInitialState, action);
 
       expect(newState.user).toEqual(USER_DATA);

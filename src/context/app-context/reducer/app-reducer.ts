@@ -27,7 +27,7 @@ export const appReducer = (
   action: ActionTypes,
 ): AppState => {
   switch (action.type) {
-    case Types.LOGIN:
+    case Types.SET_USER:
       return {
         ...state,
         user: action.payload.user,

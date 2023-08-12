@@ -1,15 +1,15 @@
 import {USER_DATA} from '@sas/__mocks__';
 
-import {login} from './login';
+import {setUser} from './set-user';
 import {ActionTypes, Types} from '../../app-types';
 
-it('login-action', () => {
+it('set-user-action', () => {
   const expectedAction: ActionTypes = {
-    type: Types.LOGIN,
+    type: Types.SET_USER,
     payload: {user: USER_DATA},
   };
 
-  const action = login(USER_DATA);
+  const action = setUser(USER_DATA);
 
   expect(action).toEqual(expectedAction);
 });
