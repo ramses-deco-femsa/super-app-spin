@@ -35,7 +35,7 @@ describe('<RedeemPointsScreen />', () => {
   });
 
   describe('onSubmit', () => {
-    let createMovementMock: jest.Mock;
+    let redeemPointsMock: jest.Mock;
 
     const submitForm = (amountValue: string) => {
       // write a valid amount to redeem
@@ -52,7 +52,7 @@ describe('<RedeemPointsScreen />', () => {
       let navigationResetMock: jest.Mock;
 
       beforeEach(() => {
-        createMovementMock = jest.fn(() => Promise.resolve(movementCreated));
+        redeemPointsMock = jest.fn(() => Promise.resolve(movementCreated));
         navigationResetMock = jest.fn();
 
         render(
@@ -65,16 +65,16 @@ describe('<RedeemPointsScreen />', () => {
           {
             contextState: {
               user: USER_DATA,
-              createMovement: createMovementMock,
+              redeemPoints: redeemPointsMock,
             },
           },
         );
       });
 
-      it('should calls createMovementMock', async () => {
+      it('should calls redeemPointsMock', async () => {
         submitForm('30');
 
-        await expect(createMovementMock).toHaveBeenCalledWith({
+        await expect(redeemPointsMock).toHaveBeenCalledWith({
           entity: brandEntity.entity,
           points: 300,
         });
@@ -107,7 +107,7 @@ describe('<RedeemPointsScreen />', () => {
 
     describe('onError movement creation', () => {
       beforeEach(() => {
-        createMovementMock = jest.fn(() =>
+        redeemPointsMock = jest.fn(() =>
           Promise.reject(new Error('something fails')),
         );
 
@@ -120,7 +120,7 @@ describe('<RedeemPointsScreen />', () => {
           {
             contextState: {
               user: USER_DATA,
-              createMovement: createMovementMock,
+              redeemPoints: redeemPointsMock,
             },
           },
         );

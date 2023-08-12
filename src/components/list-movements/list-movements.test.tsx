@@ -7,7 +7,13 @@ import {ListMovements} from './list-movements';
 
 describe('<ListMovements />', () => {
   it('should render titles of data recieved', () => {
-    render(<ListMovements data={MOVEMENTS_FORMATTED_DATA} />);
+    render(
+      <ListMovements
+        data={MOVEMENTS_FORMATTED_DATA}
+        fetching={false}
+        hasMoreData={false}
+      />,
+    );
 
     expect(
       screen.getByText(i18n.t(MOVEMENTS_FORMATTED_DATA[0].title)),
@@ -19,7 +25,7 @@ describe('<ListMovements />', () => {
   });
 
   it('should render empty list component', () => {
-    render(<ListMovements data={[]} />);
+    render(<ListMovements fetching={false} hasMoreData={false} data={[]} />);
 
     expect(screen.getByTestId('empty-list-movements')).toBeDefined();
   });

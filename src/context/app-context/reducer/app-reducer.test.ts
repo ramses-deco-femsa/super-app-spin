@@ -1,8 +1,7 @@
-import {MOVEMENTS_DATA, BRAND_ENTITIES_DATA, USER_DATA} from '@sas/__mocks__';
-import {formatMovementsByDate} from '@sas/utils';
+import {BRAND_ENTITIES_DATA, USER_DATA} from '@sas/__mocks__';
 
 import {appReducer, appInitialState} from './app-reducer';
-import {ActionTypes, Types, login, logout, redeemPoints} from '../actions';
+import {ActionTypes, Types, login, logout} from '../actions';
 
 describe('app-reducer', () => {
   it('should return default state if action not match', () => {
@@ -33,7 +32,10 @@ describe('app-reducer', () => {
 
     describe('redeemPoints', () => {
       it('should do nothing when user not exists', () => {
-        const action = redeemPoints(150) as ActionTypes;
+        const action = {
+          type: Types.REDEEM_POINTS,
+          payload: {points: 150},
+        } as ActionTypes;
         const state = {...appInitialState, user: null};
         const newState = appReducer(state, action);
 
@@ -41,51 +43,15 @@ describe('app-reducer', () => {
       });
 
       it('should update user points when user exists', () => {
-        const action = redeemPoints(150) as ActionTypes;
+        const action = {
+          type: Types.REDEEM_POINTS,
+          payload: {points: 150},
+        } as ActionTypes;
         const state = {...appInitialState, user: USER_DATA};
         const newState = appReducer(state, action);
 
         expect(newState.user!.points).toBe(USER_DATA.points - 150);
       });
-    });
-  });
-
-  describe('movements', () => {
-    it('sets loading true on FETCH_MOVEMENTS_REQUEST', () => {
-      const action: ActionTypes = {
-        type: Types.FETCH_MOVEMENTS_REQUEST,
-      };
-
-      const newState = appReducer(appInitialState, action);
-
-      expect(newState.movements.loading).toBeTruthy();
-    });
-
-    it('sets data value and loading as false on FETCH_MOVEMENTS_SUCCESS', () => {
-      const action: ActionTypes = {
-        type: Types.FETCH_MOVEMENTS_SUCCESS,
-        payload: {movements: MOVEMENTS_DATA},
-      };
-
-      const newState = appReducer(appInitialState, action);
-
-      expect(newState.movements.loading).toBeFalsy();
-      expect(newState.movements.data).toEqual(MOVEMENTS_DATA);
-      expect(newState.movements.dataFormmated).toEqual(
-        formatMovementsByDate(MOVEMENTS_DATA),
-      );
-    });
-
-    it('sets error message and loading as false on FETCH_MOVEMENTS_FAILURE', () => {
-      const action: ActionTypes = {
-        type: Types.FETCH_MOVEMENTS_FAILURE,
-        payload: {error: 'some error'},
-      };
-
-      const newState = appReducer(appInitialState, action);
-
-      expect(newState.movements.loading).toBeFalsy();
-      expect(newState.movements.error).toBe(action.payload.error);
     });
   });
 

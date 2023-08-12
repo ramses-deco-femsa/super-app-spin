@@ -1,17 +1,10 @@
 import {USER_DATA} from '@sas/__mocks__';
-import type {BrandEntity, Movement, MovementsFormatted, User} from '@sas/types';
-import {formatMovementsByDate} from '@sas/utils';
+import type {BrandEntity, User} from '@sas/types';
 
 import {ActionTypes, Types} from '../actions';
 
 export type AppState = {
   user: User | null;
-  movements: {
-    data: Movement[];
-    dataFormmated: MovementsFormatted[];
-    loading: boolean;
-    error?: string;
-  };
   brandEntities: {
     data: BrandEntity[];
     loading: boolean;
@@ -22,12 +15,6 @@ export type AppState = {
 export const appInitialState: AppState = {
   // NOTE: use mock user until login screen
   user: USER_DATA,
-  movements: {
-    dataFormmated: [],
-    data: [],
-    loading: false,
-    error: undefined,
-  },
   brandEntities: {
     data: [],
     loading: false,
@@ -60,34 +47,6 @@ export const appReducer = (
         user: {
           ...state.user,
           points: state.user.points - action.payload.points,
-        },
-      };
-    case Types.FETCH_MOVEMENTS_REQUEST:
-      return {
-        ...state,
-        movements: {
-          ...state.movements,
-          loading: true,
-          error: undefined,
-        },
-      };
-    case Types.FETCH_MOVEMENTS_SUCCESS:
-      return {
-        ...state,
-        movements: {
-          data: action.payload.movements,
-          dataFormmated: formatMovementsByDate(action.payload.movements),
-          loading: false,
-          error: undefined,
-        },
-      };
-    case Types.FETCH_MOVEMENTS_FAILURE:
-      return {
-        ...state,
-        movements: {
-          ...state.movements,
-          loading: false,
-          error: action.payload.error,
         },
       };
     case Types.FETCH_BRAND_ENTITITES_REQUEST:

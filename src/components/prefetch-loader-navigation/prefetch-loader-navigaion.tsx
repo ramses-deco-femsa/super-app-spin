@@ -19,7 +19,7 @@ export const PrefetchLoaderNavigator = ({
   children,
 }: PrefetchLoaderProps) => {
   useEffect(() => {
-    if (loading || !action) {
+    if (!action) {
       return;
     }
 

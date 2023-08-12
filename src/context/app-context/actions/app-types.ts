@@ -1,13 +1,11 @@
 import {BrandEntitiesActions, BrandEntitiesTypes} from './brand-entities';
-import {MovementsActions, MovementTypes} from './movements';
 import {UserActions, UserTypes} from './user';
 
-export type ActionTypes = MovementsActions | BrandEntitiesActions | UserActions;
+export type ActionTypes = UserActions | BrandEntitiesActions;
 
 const AllTypes = {
-  ...MovementTypes,
-  ...BrandEntitiesTypes,
   ...UserTypes,
+  ...BrandEntitiesTypes,
 };
 
 export const Types = {...AllTypes};

@@ -20,18 +20,9 @@ describe('<PrefetchLoaderNavigator />', () => {
     render(<PrefetchLoaderNavigator loading error="somError" />);
     expect(SnackBar.show).toHaveBeenCalled();
   });
-
-  describe('action prop', () => {
-    it('shoulds calls action when loading is false', async () => {
-      const action = jest.fn().mockResolvedValue(null);
-      render(<PrefetchLoaderNavigator loading={false} action={action} />);
-      expect(action).toHaveBeenCalled();
-    });
-
-    it('shoulds not calls action when loading is true', async () => {
-      const action = jest.fn().mockResolvedValue(null);
-      render(<PrefetchLoaderNavigator loading action={action} />);
-      expect(action).not.toHaveBeenCalled();
-    });
+  it('shoulds calls action', async () => {
+    const action = jest.fn().mockResolvedValue(null);
+    render(<PrefetchLoaderNavigator loading={false} action={action} />);
+    expect(action).toHaveBeenCalled();
   });
 });
