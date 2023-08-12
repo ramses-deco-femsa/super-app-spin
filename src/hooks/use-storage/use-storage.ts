@@ -18,15 +18,6 @@ export const useStorage = <T>({key, value, callback}: UseStorageProps<T>) => {
   });
 
   useEffect(() => {
-    if (typeof value === 'undefined') {
-      return;
-    }
-
-    setStorageData<T>(key, value);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [value]);
-
-  useEffect(() => {
     getStorageData<T>(key).then(storedData => {
       if (storedData) {
         callback?.(storedData);
@@ -38,6 +29,16 @@ export const useStorage = <T>({key, value, callback}: UseStorageProps<T>) => {
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    if (typeof value === 'undefined') {
+      return;
+    }
+
+    setStorageData<T>(key, value);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [value]);
+
   return {
     isLoading: state.isLoading,
     data: state.data,

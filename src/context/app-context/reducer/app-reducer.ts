@@ -4,7 +4,7 @@ import type {BrandEntity, User} from '@sas/types';
 import {ActionTypes, Types} from '../actions';
 
 export type AppState = {
-  user: User | null;
+  user?: User | null;
   brandEntities: {
     data: BrandEntity[];
     loading: boolean;
@@ -15,6 +15,7 @@ export type AppState = {
 export const appInitialState: AppState = {
   // NOTE: use mock user until login screen
   user: USER_DATA,
+  // user: undefined,
   brandEntities: {
     data: [],
     loading: false,
