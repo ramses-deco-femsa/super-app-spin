@@ -5,10 +5,10 @@ import {StackScreenProps} from '@react-navigation/stack';
 
 import {RootStackParamList} from '@sas/navigation/navigation.types';
 
-export type OnboardingScreenProps = StackScreenProps<RootStackParamList>;
+export type LoginScreenProps = StackScreenProps<RootStackParamList>;
 
-export const OnboardingScreen = (_props: OnboardingScreenProps) => (
+export const LoginScreen = (_props: LoginScreenProps) => (
   <View>
-    <Text>OnboardingScreen</Text>
+    <Text>LoginScreen</Text>
   </View>
 );
