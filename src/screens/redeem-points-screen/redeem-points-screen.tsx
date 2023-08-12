@@ -26,13 +26,13 @@ export const RedeemPointsScreen = ({
   },
   navigation,
 }: RedeemPointsScreenProps) => {
-  const {createMovement} = useAppCtx();
+  const {redeemPoints} = useAppCtx();
   const {t} = useTranslation();
   const redeemPointsFormRef = useRef<RedeemPointsFormRef | null>(null);
 
   const handleSubmit = async () => {
     try {
-      const movement = await createMovement({
+      const movement = await redeemPoints({
         entity: brandEntity.entity,
         points: redeemPointsFormRef.current!.pointsToRedeem,
       });
