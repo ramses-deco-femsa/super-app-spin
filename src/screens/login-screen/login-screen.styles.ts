@@ -3,6 +3,9 @@ import {StyleSheet} from 'react-native';
 import {COLORS} from '@sas/theme';
 
 export const styles = StyleSheet.create({
+  scrollContentContainer: {
+    flex: 1,
+  },
   container: {
     flex: 1,
     position: 'relative',

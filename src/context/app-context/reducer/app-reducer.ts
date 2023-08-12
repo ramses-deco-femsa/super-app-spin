@@ -1,4 +1,4 @@
-import {USER_DATA} from '@sas/__mocks__';
+// import {USER_DATA} from '@sas/__mocks__';
 import type {BrandEntity, User} from '@sas/types';
 
 import {ActionTypes, Types} from '../actions';
@@ -14,8 +14,8 @@ export type AppState = {
 
 export const appInitialState: AppState = {
   // NOTE: use mock user until login screen
-  user: USER_DATA,
-  // user: undefined,
+  // user: USER_DATA,
+  user: undefined,
   brandEntities: {
     data: [],
     loading: false,

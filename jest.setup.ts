@@ -24,6 +24,13 @@ jest.mock('@sas/hooks', () => ({
   useStorage: () => ({isLoading: false}),
 }));
 
+jest.mock('react-native-keyboard-aware-scroll-view', () => {
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const react = require('react-native');
+
+  return {KeyboardAwareScrollView: react.ScrollView};
+});
+
 // mock for ui ------------------------------------------------------------------------------
 jest.mock('react-native-otp-verify', () => ({
   useOtpVerify: jest.fn(() => ({hash: '', otp: '', message: ''})),
