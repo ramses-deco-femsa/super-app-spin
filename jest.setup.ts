@@ -14,6 +14,23 @@ jest.mock('react-native-reanimated', async () => {
 // Silence the warning: Animated: `useNativeDriver` is not supported because the native animated module is missing
 jest.mock('react-native/Libraries/Animated/NativeAnimatedHelper');
 
+jest.mock('@react-native-async-storage/async-storage', () =>
+  require('@react-native-async-storage/async-storage/jest/async-storage-mock'),
+);
+
+// TODO: in order to render views without wait until storage data is loaded
+jest.mock('@sas/hooks', () => ({
+  ...jest.requireActual('@sas/hooks'),
+  useStorage: () => ({isLoading: false}),
+}));
+
+jest.mock('react-native-keyboard-aware-scroll-view', () => {
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const react = require('react-native');
+
+  return {KeyboardAwareScrollView: react.ScrollView};
+});
+
 // mock for ui ------------------------------------------------------------------------------
 jest.mock('react-native-otp-verify', () => ({
   useOtpVerify: jest.fn(() => ({hash: '', otp: '', message: ''})),

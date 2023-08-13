@@ -3,12 +3,14 @@ import {Dispatch} from 'react';
 import uuid from 'react-native-uuid';
 
 import {femsaAPI} from '@sas/api';
-import type {Movement, NewMovement} from '@sas/types';
+import type {AppState} from '@sas/context/app-context/reducer';
+import type {Movement, NewMovement, User} from '@sas/types';
 
 import {UserTypes, UserActions} from '../user-types';
 
 export const redeemPoints =
-  (dispatch: Dispatch<UserActions>) => async (newMovement: NewMovement) => {
+  (dispatch: Dispatch<UserActions>, state: AppState) =>
+  async (newMovement: NewMovement) => {
     try {
       const today = new Date();
       const expiryDate = new Date();
@@ -43,9 +45,17 @@ export const redeemPoints =
         data: movement,
       });
 
+      const {data: user} = await femsaAPI.request<User>({
+        method: 'patch',
+        url: `/user/${state.user?.id}`,
+        data: {
+          points: state.user!.points - data.points,
+        },
+      });
+
       await dispatch({
-        type: UserTypes.REDEEM_POINTS,
-        payload: {points: data.points},
+        type: UserTypes.SET_USER,
+        payload: {user},
       });
 
       return data;

@@ -5,7 +5,7 @@ export * from './movement-detail-screen';
 export * from './movements-earned-screen';
 export * from './movements-list-screen';
 export * from './movements-used-screen';
-export * from './onboarding-screen';
+export * from './login-screen';
 export * from './wallet-screen';
 export * from './choose-brand-entity-screen';
 export * from './redeem-points-screen';

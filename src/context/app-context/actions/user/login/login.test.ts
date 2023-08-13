@@ -1,15 +1,32 @@
 import {USER_DATA} from '@sas/__mocks__';
+import {femsaAPIMock} from '@sas/__mocks__/femsa-api-mock';
 
 import {login} from './login';
-import {ActionTypes, Types} from '../../app-types';
+import {UserTypes} from '../user-types';
 
-it('login-action', () => {
-  const expectedAction: ActionTypes = {
-    type: Types.LOGIN,
-    payload: {user: USER_DATA},
-  };
+describe('login action', () => {
+  let dispatch: jest.Mock;
 
-  const action = login(USER_DATA);
+  beforeEach(() => {
+    dispatch = jest.fn();
+  });
 
-  expect(action).toEqual(expectedAction);
+  it('should dispatch user when user exists]', async () => {
+    femsaAPIMock.onGet('/user').reply(200, [USER_DATA]);
+
+    await login(dispatch)(USER_DATA.phone);
+
+    expect(dispatch).lastCalledWith({
+      type: UserTypes.SET_USER,
+      payload: {user: USER_DATA},
+    });
+  });
+
+  it('should throw error if endpoints dont response with the [user]', async () => {
+    femsaAPIMock.onGet('/user').reply(200, [USER_DATA, USER_DATA]);
+
+    await expect(login(dispatch)(USER_DATA.phone)).rejects.toThrowError(
+      'Invalid Credentials',
+    );
+  });
 });

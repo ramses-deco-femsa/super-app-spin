@@ -5,6 +5,7 @@ import {RenderOptions, render} from '@testing-library/react-native';
 import {I18nextProvider} from 'react-i18next';
 
 import {ThemeProvider} from '@digitaltitransversal';
+import {USER_DATA} from '@sas/__mocks__';
 import {AppProvider, AppContext} from '@sas/context';
 
 import i18n from '../../../services/i18n';
@@ -24,7 +25,12 @@ const AllTheProviders = ({
     <NavigationContainer>
       <ThemeProvider>
         <I18nextProvider i18n={i18n}>
-          <AppProvider initialValue={contextState}>
+          <AppProvider
+            initialValue={{
+              // NOTE: almost all views are with logged user, so mock will add it by default
+              user: USER_DATA,
+              ...contextState,
+            }}>
             {Wrapper ? <Wrapper>{children} </Wrapper> : children}
           </AppProvider>
         </I18nextProvider>

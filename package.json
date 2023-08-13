@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@kichiyaki/react-native-barcode-generator": "^0.6.7",
+    "@react-native-async-storage/async-storage": "1.19.1",
     "@react-native-masked-view/masked-view": "0.2.9",
     "@react-navigation/bottom-tabs": "6.5.8",
     "@react-navigation/material-top-tabs": "6.6.3",
@@ -32,6 +33,7 @@
     "react-native-date-picker": "^4.2.13",
     "react-native-device-info": "^10.8.0",
     "react-native-gesture-handler": "2.12.1",
+    "react-native-keyboard-aware-scroll-view": "0.9.5",
     "react-native-linear-gradient": "^2.8.1",
     "react-native-otp-verify": "^1.1.5",
     "react-native-pager-view": "6.2.0",
@@ -52,6 +54,7 @@
     "@react-native/eslint-config": "^0.72.2",
     "@react-native/metro-config": "^0.72.9",
     "@testing-library/jest-native": "5.4.2",
+    "@testing-library/react-hooks": "8.0.1",
     "@testing-library/react-native": "12.2.0",
     "@tsconfig/react-native": "^3.0.0",
     "@types/jest": "29.5.3",

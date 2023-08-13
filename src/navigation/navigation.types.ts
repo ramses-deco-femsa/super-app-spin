@@ -4,7 +4,7 @@ import type {BrandEntity, Movement} from '@sas/types';
 
 export enum RouteNames {
   // unauthenticated
-  OnboardingScreen = 'OnboardingScreen',
+  LoginScreen = 'LoginScreen',
 
   // authenticated
   HomeScreen = 'HomeScreenTabNavigation',
@@ -25,7 +25,7 @@ export enum RouteNames {
 }
 
 export type RootStackParamList = {
-  [RouteNames.OnboardingScreen]: undefined;
+  [RouteNames.LoginScreen]: undefined;
   [RouteNames.HomeScreen]: undefined;
   [RouteNames.HomeTab]: undefined;
   [RouteNames.BenefitsTab]: undefined;

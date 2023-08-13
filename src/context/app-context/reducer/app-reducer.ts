@@ -1,10 +1,10 @@
-import {USER_DATA} from '@sas/__mocks__';
+// import {USER_DATA} from '@sas/__mocks__';
 import type {BrandEntity, User} from '@sas/types';
 
 import {ActionTypes, Types} from '../actions';
 
 export type AppState = {
-  user: User | null;
+  user?: User | null;
   brandEntities: {
     data: BrandEntity[];
     loading: boolean;
@@ -14,7 +14,8 @@ export type AppState = {
 
 export const appInitialState: AppState = {
   // NOTE: use mock user until login screen
-  user: USER_DATA,
+  // user: USER_DATA,
+  user: undefined,
   brandEntities: {
     data: [],
     loading: false,
@@ -27,7 +28,7 @@ export const appReducer = (
   action: ActionTypes,
 ): AppState => {
   switch (action.type) {
-    case Types.LOGIN:
+    case Types.SET_USER:
       return {
         ...state,
         user: action.payload.user,

@@ -1,18 +1,21 @@
 import React, {ReactNode, createContext, useContext, useReducer} from 'react';
 
+import {useStorage} from '@sas/hooks';
+
 import {
   getBrandEntities,
-  login,
+  setUser,
   logout,
   redeemPoints,
   ActionTypes,
+  login,
 } from './actions';
 import {appReducer, appInitialState, AppState} from './reducer';
 
 type AppContextActions = {
+  login: ReturnType<typeof login>;
   redeemPoints: ReturnType<typeof redeemPoints>;
   getBrandEntities: ReturnType<typeof getBrandEntities>;
-  login: (params: Parameters<typeof login>['0']) => void;
   logout: () => void;
 };
 
@@ -27,12 +30,19 @@ type AppProviderProps = {
 
 export const AppProvider = ({children, initialValue}: AppProviderProps) => {
   const [state, dispatch] = useReducer(appReducer, appInitialState);
+  const {isLoading} = useStorage({
+    key: 'user',
+    value: state.user,
+    callback: user => {
+      dispatch(setUser(user!) as ActionTypes);
+    },
+  });
 
   const actions: AppContextActions = {
+    login: login(dispatch),
+    redeemPoints: redeemPoints(dispatch, state),
     getBrandEntities: getBrandEntities(dispatch),
-    login: user => dispatch(login(user) as ActionTypes),
     logout: () => dispatch(logout() as ActionTypes),
-    redeemPoints: redeemPoints(dispatch),
   };
 
   return (
@@ -42,7 +52,7 @@ export const AppProvider = ({children, initialValue}: AppProviderProps) => {
         ...actions,
         ...initialValue,
       }}>
-      {children}
+      {isLoading ? null : children}
     </appContext.Provider>
   );
 };
