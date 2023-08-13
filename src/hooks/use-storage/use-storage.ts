@@ -5,7 +5,7 @@ import {getStorageData, setStorageData} from '@sas/utils';
 type UseStorageProps<T> = {
   key: string;
   value?: T;
-  callback?: (value: T) => void;
+  callback?: (value: T) => Promise<void>;
 };
 
 export const useStorage = <T>({key, value, callback}: UseStorageProps<T>) => {
@@ -18,9 +18,9 @@ export const useStorage = <T>({key, value, callback}: UseStorageProps<T>) => {
   });
 
   useEffect(() => {
-    getStorageData<T>(key).then(storedData => {
+    getStorageData<T>(key).then(async storedData => {
       if (storedData) {
-        callback?.(storedData);
+        await callback?.(storedData);
       }
       setState({
         isLoading: false,

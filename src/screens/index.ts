@@ -10,3 +10,4 @@ export * from './wallet-screen';
 export * from './choose-brand-entity-screen';
 export * from './redeem-points-screen';
 export * from './redeem-points-successful-screen';
+export * from './splash-screen';

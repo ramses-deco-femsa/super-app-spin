@@ -1,6 +1,7 @@
 import React, {ReactNode, createContext, useContext, useReducer} from 'react';
 
 import {useStorage} from '@sas/hooks';
+import {SplashScreen} from '@sas/screens';
 
 import {
   getBrandEntities,
@@ -9,6 +10,7 @@ import {
   redeemPoints,
   ActionTypes,
   login,
+  getUser,
 } from './actions';
 import {appReducer, appInitialState, AppState} from './reducer';
 
@@ -33,8 +35,18 @@ export const AppProvider = ({children, initialValue}: AppProviderProps) => {
   const {isLoading} = useStorage({
     key: 'user',
     value: state.user,
-    callback: user => {
-      dispatch(setUser(user!) as ActionTypes);
+    callback: async user => {
+      try {
+        await getUser(dispatch)(user!.id);
+      } catch (err) {
+        // NOTE: this is only if user is not founded in DB
+        dispatch(setUser(undefined!) as ActionTypes);
+      }
+
+      // NOTE: force splash screen
+      await new Promise(resolve => {
+        setTimeout(resolve, 1000);
+      });
     },
   });
 
@@ -52,7 +64,7 @@ export const AppProvider = ({children, initialValue}: AppProviderProps) => {
         ...actions,
         ...initialValue,
       }}>
-      {isLoading ? null : children}
+      {isLoading ? <SplashScreen /> : children}
     </appContext.Provider>
   );
 };
