@@ -40,9 +40,9 @@ export const AppProvider = ({children, initialValue}: AppProviderProps) => {
 
   const actions: AppContextActions = {
     login: login(dispatch),
+    redeemPoints: redeemPoints(dispatch, state),
     getBrandEntities: getBrandEntities(dispatch),
     logout: () => dispatch(logout() as ActionTypes),
-    redeemPoints: redeemPoints(dispatch),
   };
 
   return (
