@@ -59,7 +59,7 @@ describe('<RedeemPointsHeader />', () => {
         {
           contextState: {
             user: {
-              name: 'demo',
+              ...USER_DATA,
               points: 2000,
             },
           },

@@ -8,10 +8,12 @@ import {
   logout,
   redeemPoints,
   ActionTypes,
+  login,
 } from './actions';
 import {appReducer, appInitialState, AppState} from './reducer';
 
 type AppContextActions = {
+  login: ReturnType<typeof login>;
   redeemPoints: ReturnType<typeof redeemPoints>;
   getBrandEntities: ReturnType<typeof getBrandEntities>;
   logout: () => void;
@@ -37,6 +39,7 @@ export const AppProvider = ({children, initialValue}: AppProviderProps) => {
   });
 
   const actions: AppContextActions = {
+    login: login(dispatch),
     getBrandEntities: getBrandEntities(dispatch),
     logout: () => dispatch(logout() as ActionTypes),
     redeemPoints: redeemPoints(dispatch),
