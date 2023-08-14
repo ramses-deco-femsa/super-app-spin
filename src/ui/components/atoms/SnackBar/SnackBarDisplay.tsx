@@ -120,7 +120,7 @@ const SnackbarDisplay = ({ testID }: ComponentProps) => {
                 testID={`${iconName}-test-id`}
                 name={iconName}
                 iconTypographyStyle={{
-                  color: iconColor,
+                  color: iconColor || textColor,
                   fontSize: 16,
                 }}
               />
