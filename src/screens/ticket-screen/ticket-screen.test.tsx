@@ -4,20 +4,17 @@ import React from 'react';
 import {MOVEMENTS_DATA} from '@sas/__mocks__';
 import {render, screen} from '@test-utils';
 
-import {
-  RedeemPointsSuccessfulScreen,
-  RedeemPointsSuccessfulScreenProps,
-} from './redeem-points-successful-screen';
+import {TicketScreen, TicketScreenProps} from './ticket-screen';
 
-describe('<RedeemPointsSuccessfulScreen />', () => {
+describe('<TicketScreen />', () => {
   const [movement] = MOVEMENTS_DATA;
 
   it('should render screen', () => {
     render(
-      <RedeemPointsSuccessfulScreen
+      <TicketScreen
         {...({
           route: {params: {movement}},
-        } as RedeemPointsSuccessfulScreenProps)}
+        } as TicketScreenProps)}
       />,
     );
 

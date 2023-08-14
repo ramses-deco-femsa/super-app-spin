@@ -36,11 +36,15 @@ export const AppProvider = ({children, initialValue}: AppProviderProps) => {
     key: 'user',
     value: state.user,
     callback: async user => {
-      try {
-        await getUser(dispatch)(user!.id);
-      } catch (err) {
-        // NOTE: this is only if user is not founded in DB
-        dispatch(setUser(undefined!) as ActionTypes);
+      if (user) {
+        try {
+          await getUser(dispatch)(user!.id);
+        } catch (err) {
+          // NOTE: this is only if user is not founded in DB
+          if ((err as Error).message === 'Invalid User') {
+            dispatch(setUser(undefined!) as ActionTypes);
+          }
+        }
       }
 
       // NOTE: force splash screen

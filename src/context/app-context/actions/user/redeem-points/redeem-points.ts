@@ -18,7 +18,7 @@ export const redeemPoints =
 
       const movement: Omit<Movement, 'id'> = {
         ...newMovement,
-        giftCode: uuid.v4().toString(),
+        giftCode: uuid.v4().toString().replaceAll('-', '').slice(0, 17),
         transactionNo: uuid.v4().toString(),
         operation: 'expended',
         date: today

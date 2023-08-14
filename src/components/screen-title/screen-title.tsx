@@ -9,7 +9,7 @@ import {RouteNames} from '@sas/navigation/navigation.types';
 
 type ScreenTitleProps = HeaderTitleProps;
 
-export const ScreenTitle = ({children}: ScreenTitleProps) => {
+export const ScreenTitle = ({children, tintColor}: ScreenTitleProps) => {
   const getTitle = () => {
     switch (children) {
       case RouteNames.BenefitsTab:
@@ -22,7 +22,7 @@ export const ScreenTitle = ({children}: ScreenTitleProps) => {
       case RouteNames.ChooseBrandEntityScreen:
       case RouteNames.RedeemPointsScreen:
         return 'navigation.screens.points';
-      case RouteNames.RedeemPointsSuccessfulScreen:
+      case RouteNames.TicketScreen:
       case RouteNames.MovementDetailScreen:
         return 'navigation.screens.movement_detail';
       case RouteNames.AccountTab:
@@ -33,7 +33,7 @@ export const ScreenTitle = ({children}: ScreenTitleProps) => {
   };
 
   return (
-    <Text style={styles.title}>
+    <Text style={[styles.title, {color: tintColor}]}>
       <Trans i18nKey={getTitle()} />
     </Text>
   );

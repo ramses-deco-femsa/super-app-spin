@@ -21,7 +21,7 @@ export enum RouteNames {
 
   ChooseBrandEntityScreen = 'ChooseBrandEntityScreen',
   RedeemPointsScreen = 'RedeemPointsScreen',
-  RedeemPointsSuccessfulScreen = 'RedeemPointsSuccessfulScreen',
+  TicketScreen = 'TicketScreen',
 }
 
 export type RootStackParamList = {
@@ -42,7 +42,7 @@ export type RootStackParamList = {
   [RouteNames.RedeemPointsScreen]: {
     brandEntity: BrandEntity;
   };
-  [RouteNames.RedeemPointsSuccessfulScreen]: {
+  [RouteNames.TicketScreen]: {
     movement: Movement;
   };
 };
