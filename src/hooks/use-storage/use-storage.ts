@@ -19,9 +19,7 @@ export const useStorage = <T>({key, value, callback}: UseStorageProps<T>) => {
 
   useEffect(() => {
     getStorageData<T>(key).then(async storedData => {
-      if (storedData) {
-        await callback?.(storedData);
-      }
+      await callback?.(storedData!);
       setState({
         isLoading: false,
         data: storedData,

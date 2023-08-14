@@ -8,7 +8,7 @@ import {
   ChooseBrandEntityScreen,
   MovementDetailScreen,
   RedeemPointsScreen,
-  RedeemPointsSuccessfulScreen,
+  TicketScreen,
 } from '@sas/screens';
 import {COLORS} from '@sas/theme';
 
@@ -59,8 +59,16 @@ export const AuthenticatedNavigation = () => (
       component={RedeemPointsScreen}
     />
     <Stack.Screen
-      name={RouteNames.RedeemPointsSuccessfulScreen}
-      component={RedeemPointsSuccessfulScreen}
+      options={{
+        headerTintColor: COLORS.surface_primary,
+        headerStyle: {
+          backgroundColor: '#087D6F',
+          shadowColor: 'transparent',
+          elevation: 0,
+        },
+      }}
+      name={RouteNames.TicketScreen}
+      component={TicketScreen}
     />
   </Stack.Navigator>
 );

@@ -53,7 +53,7 @@ export const RedeemPointsScreen = ({
             state: {routes: [{name: RouteNames.BenefitsTab}]},
           },
           {
-            name: RouteNames.RedeemPointsSuccessfulScreen,
+            name: RouteNames.TicketScreen,
             params: {movement},
           },
         ],

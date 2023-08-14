@@ -34,7 +34,7 @@ describe('<ScreenTitle />', () => {
 
   it('should render movement_detail name on several screens', () => {
     screenName = 'navigation.screens.movement_detail';
-    render(<ScreenTitle children={RouteNames.RedeemPointsSuccessfulScreen} />);
+    render(<ScreenTitle children={RouteNames.TicketScreen} />);
     doExpect(screenName);
     render(<ScreenTitle children={RouteNames.MovementDetailScreen} />);
     doExpect(screenName);
