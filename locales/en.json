@@ -1,0 +1,142 @@
+{
+  "general": {
+    "points": "Points",
+    "logout": "Logout",
+    "version": "Version"
+  },
+  "welcome": "Weolcome to spin by oxxo",
+  "check": "Check",
+  "yourHistory": "Your history",
+  "changePoints": "Change your points",
+  "youHave": "You have",
+  "score": "Score",
+  "winFreeProducts": "Win free products",
+  "verySoonYoWillBeAbleToAccumulateYouPoints": "Very soon you will be able to accumulate your points",
+  "accumulatePoints": "accumulate points",
+  "earnMorePoints": "earn more points",
+  "verySoonYouWillBeAbleToEarnMorePointsInTheTotalOfYourPurchase": "Very soon you will be able to earn more points in the total of your purchase",
+  "addToBuying": "Sum when buying",
+  "verySoonYouWillBeAbleToAccumulatePurchasesAndTakeGiftProducts": "Very soon you will be able to accumulate purchases and take gift products",
+  "ticketScreen": {
+    "movementDetail": "Movement details",
+    "copyInstructions": "Touch the icon to copy the gift certificate or write it from the Volaris app or website",
+    "giftCertificate": "Gift certificate",
+    "howToUseGiftCard": "How to use a gift certificate?",
+    "changedPoints": "Changed points",
+    "areWorth": "Are worth",
+    "date": "Date",
+    "areWorthUpTo": "Are worth up",
+    "transactionNumber": "Transaction number",
+    "useGiftCertificate": "Use gift certificate",
+    "copyInstruction": "Copy your gift certificate with spin premia",
+    "enterWebsite": "Enter the website",
+    "chooseYourPrize": "Choose your prize to redeem",
+    "beforeFinishingYourPurchase": "Before completing your purchase, paste or write the gift certificate to choose your payment method",
+    "payYourElectronicCredit": "Pay your electronic credit",
+    "payYourBaseRate": "Pay your base rate with your electronic credit",
+    "taxesAndAditionalProducts": "Taxes, additional products and services must be paid with an additional credit or debit card",
+    "activate":"Activate",
+    "yourTicketHasBeenSaved": "Your ticket has been saved",
+    "youCanSeeItInYourMovementHistory": "You can see it in your movement history",
+    "numberOfCredit": "Number of credit"
+  },
+  "navigation": {
+    "screens": {
+      "benefits": "Benefits",
+      "movements": "Movements",
+      "movement_detail": "Movement Detail",
+      "points": "Change your points",
+      "account": "Account"
+    },
+    "tabs": {
+      "home": "Home",
+      "benefits": "Benefits",
+      "wallet": "Wallet",
+      "account": "Account"
+    }
+  },
+  "login": {
+    "title": "Do your day-to-day operations wherever you are",
+    "phone_number": "Mobile number",
+    "terms_and_conditions": "By continuing you acknowledge that you are of legal age, as well as having read and accepted our Terms and Conditions and our Privacy Notice",
+    "submit": "Begin"
+  },
+  "homeScreen": {
+    "fallback": "Screen home"
+  },
+  "walletScreen": {
+    "fallback": "Screen walllet"
+  },
+  "account": {
+    "change_language": "Change language to spanish",
+    "other_actions": "Other actions",
+    "logout_success_message": "Done! you closed your session",
+    "confirm_modal": {
+      "title": "Do you want to log out?",
+      "subtitle": "Remember that you can re-enter the app whenever you want",
+      "confirm": "Yes, log out",
+      "cancel": "Some other time"
+    }
+  },
+  "movements": {
+    "tabs": {
+      "all": "all",
+      "earned": "earned",
+      "used": "used"
+    },
+    "list": {
+      "empty": "There is no movements yet!",
+      "today": "Today",
+      "yesterday": "Yesterday",
+      "last_week": "Last Week",
+      "january": "January",
+      "february": "February",
+      "march": "March",
+      "april": "April",
+      "may": "May",
+      "june": "June",
+      "july": "July",
+      "august": "August",
+      "september": "September",
+      "october": "October",
+      "november": "November",
+      "december": "December"
+    },
+    "detail": {
+      "purchase_earned_points": "in this purchase you won:",
+      "total_amount": "Total amount:",
+      "date": "Date:",
+      "use_them_from": "Use them from:",
+      "transaction_number": "Transaction number:"
+    }
+  },
+  "redeem_points": {
+    "choose_brand": {
+      "title": "Choose the partner brand in which you want to use your points",
+      "brand_entity": {
+        "types": {
+          "transport": "Transport",
+          "entertainment": "Entertainment",
+          "sport": "Sports",
+          "store": "Stores",
+          "gas-station": "Gas"
+        }
+      }
+    },
+    "form": {
+      "redeem_points_success_message": "Done! you changed your points",
+      "points": "{{points}} points",
+      "score": "score {{amount}}",
+      "description": "Write the value of the points you want to change",
+      "description_with_shortcuts": "Choose or write the value of the points you want to change",
+      "warning_minimum_amount": "Remember that you need to have a minimum of {{currency}} in points to be able to change them with the brand you chose",
+      "input_label": "Amount in pesos",
+      "other": "Other:",
+      "input_minimum__hint": "The minimum value you can redeem is {{amount}}",
+      "input_maximum_hint": "The maximum value you can redeem is {{amount}}",
+      "input_insufficient_points_error": "Insufficient points available ({{amount}})",
+      "amount_to_points": "equals {{points}} points",
+      "continue": "Continue"
+    }
+  }
+}

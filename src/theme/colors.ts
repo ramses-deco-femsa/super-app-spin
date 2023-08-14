@@ -1,0 +1,16 @@
+export enum COLORS {
+  content_primary = '#05053D',
+  content_secondary = '#373764',
+  content_tertiary = '#69698B',
+  surface_primary = '#FFFFFF',
+  surface_secondary = '#F5F5F7',
+  stroke_secondary = '#E6E6EC',
+  active_status = '#1723D3',
+  error_status = '#BB005A',
+  contextual_points_content = '#006686',
+  contextual_points_surface = '#C9E9F3',
+  contextual_info_surface = '#E0E0FF',
+  contextual_paused_content = '#955000',
+  contextual_paused_surface = '#FFDFBC',
+  content_inverse_secondary = '#B4B4C5',
+}

@@ -1,0 +1,143 @@
+{
+  "general": {
+    "points": "puntos",
+    "logout": "Cierra sesión",
+    "version": "Versión"
+  },
+  "welcome": "Bienvenido a spin",
+  "check": "Consulta",
+  "yourHistory": "tu historial",
+  "changePoints": "Cambia tus puntos",
+  "youHave": "Tienes",
+  "score": "Valen",
+  "winFreeProducts": "ganar productos de regalo",
+  "verySoonYoWillBeAbleToAccumulateYouPoints": "Muy pronto podrás sumar tus compras y",
+  "accumulatePoints": "Acumula puntos",
+  "earnMorePoints": "Gana más puntos",
+  "verySoonYouWillBeAbleToEarnMorePointsInTheTotalOfYourPurchase": "Muy pronto podrás ganar más puntos en el total de tu compra",
+  "addToBuying": "Suma al comprar",
+  "verySoonYouWillBeAbleToAccumulatePurchasesAndTakeGiftProducts": "Muy pronto podrás acumular compras y llevarte productos de regalo",
+  "ticketScreen": {
+    "movementDetail": "Detalle del movimiento",
+    "copyInstructions": "Toca el ícono para copiar el certificado de regalo o escríbelo desde la app o página web de",
+    "giftCertificate": "Certificado de regalo",
+    "howToUseGiftCard": "¿Cómo usar un certificado de regalo?",
+    "changedPoints": "Puntos cambiados",
+    "areWorth": "Valen",
+    "date": "Fecha",
+    "areWorthUpTo": "Válido hasta el",
+    "transactionNumber": "Número de transacción",
+    "useGiftCertificate": "Usar certificado de regalo",
+    "saveForAnotherTime": "Guardar para otro momento",
+    "copyInstruction": "Copiar tu certificado de regalo de Spin Premia",
+    "enterWebsite": "Ingresa al sitio web",
+    "chooseYourPrize": "Elije tu premio a canjear",
+    "beforeFinishingYourPurchase": "Antes de terminar tu compra, pega o escribe el certificado de regalo a elegir tu método de pago",
+    "payYourElectronicCredit": "Paga tu crédito electrónico",
+    "payYourBaseRate": "Paga tu tarifa base con tu crédito electrónico",
+    "taxesAndAditionalProducts": "Los impuestos, productos y servicios adicionales deben pagarse con una tarjeta de crédito o débito adicional",
+    "activate":"Activar",
+    "yourTicketHasBeenSaved": "Se guardó tu ticket",
+    "youCanSeeItInYourMovementHistory": "Puedes verlo en tu historial de movimientos",
+    "numberOfCredit": "Número de crédito"
+  },
+  "navigation": {
+    "screens": {
+      "benefits": "Beneficios",
+      "movements": "Movimientos",
+      "movement_detail": "Detalle del movimiento",
+      "points": "Cambia tus puntos",
+      "account": "Cuenta"
+    },
+    "tabs": {
+      "home": "Home",
+      "benefits": "Beneficio",
+      "wallet": "Cartera",
+      "account": "Cuenta"
+    }
+  },
+  "login": {
+    "title": "Haz tus operaciones del día a día estés dónde estés",
+    "phone_number": "Número de celular",
+    "terms_and_conditions": "Al continuar reconoces ser mayor de edad, así como haber leído y aceptado nuestros Términos y Condiciones y nuestro Aviso de privacidad",
+    "submit": "Comenzar"
+  },
+  "homeScreen": {
+    "fallback": "Pantalla home"
+  },
+  "walletScreen": {
+    "fallback": "Pantalla walllet"
+  },
+  "account": {
+    "change_language": "Cambiar idioma a ingles",
+    "other_actions": "Otras acciones",
+    "logout_success_message": "¡Listo! Cerraste tu sesión",
+    "confirm_modal": {
+      "title": "¿Quieres cerrar tu sesión?",
+      "subtitle": "Recuerda que puedes volver a entrar a la app cuando quieras",
+      "confirm": "Sí, cerrar sesión",
+      "cancel": "En otro momento"
+    }
+  },
+  "movements": {
+    "tabs": {
+      "all": "Todos",
+      "earned": "Ganados",
+      "used": "Usados"
+    },
+    "list": {
+      "empty": "Aún no hay movimientos!",
+      "today": "Hoy",
+      "yesterday": "Ayer",
+      "last_week": "Semana Anterior",
+      "january": "Enero",
+      "february": "Febrero",
+      "march": "Marzo",
+      "april": "Abril",
+      "may": "Mayo",
+      "june": "Junio",
+      "july": "Julio",
+      "august": "Agosto",
+      "september": "Septiembre",
+      "october": "Octubre",
+      "november": "Noviembre",
+      "december": "Diciembre"
+    },
+    "detail": {
+      "purchase_earned_points": "En esta compra ganaste:",
+      "total_amount": "Monto total:",
+      "date": "Fecha:",
+      "use_them_from": "Úsalos desde:",
+      "transaction_number": "Número de transacción:"
+    }
+  },
+  "redeem_points": {
+    "choose_brand": {
+      "title": "Elige la marca aliada en la que quieres usar tus puntos",
+      "brand_entity": {
+        "types": {
+          "transport": "Movilidad",
+          "entertainment": "Entretenimiento",
+          "sport": "Deportes",
+          "store": "Tienda",
+          "gas-station": "Gasolina"
+        }
+      }
+    },
+    "form": {
+      "redeem_points_success_message": "¡Listo! Cambiaste tus puntos",
+      "points": "{{points}} puntos",
+      "score": "valen {{amount}}",
+      "description": "Escribe el valor de los puntos que quieres cambiar",
+      "description_with_shortcuts": "Elige o escribe el valor de los puntos que quieres cambiar",
+      "warning_minimum_amount": "Recuerda que necesitas tener mínimo {{currency}} en puntos para poder cambiarlos con la marca que elegiste",
+      "input_label": "Monto en pesos",
+      "other": "Otro:",
+      "input_minimum__hint": "El valor mínimo que puedes cambiar es {{amount}}",
+      "input_maximum_error": "El valor máximo que puedes cambiar es {{amount}}",
+      "input_insufficient_points_error": "No tienes suficientes puntos disponibles ({{amount}})",
+      "amount_to_points": "Equivalen a {{points}} puntos",
+      "continue": "Continuar"
+    }
+  }
+}

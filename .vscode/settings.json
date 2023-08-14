@@ -1,3 +1,43 @@
 {
-  "git-blame.gitWebUrl": ""
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "node_modules": true
+  },
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/*/**": true
+  },
+  "search.exclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules": true
+  },
+  "editor.renderWhitespace": "all",
+  "editor.tabSize": 2,
+  "editor.multiCursorModifier": "alt",
+  "editor.insertSpaces": true,
+  "files.encoding": "utf8",
+  "eslint.workingDirectories": [{"mode": "auto"}],
+  "eslint.validate": [
+    "typescript",
+    "typescriptreact",
+    "javascript",
+    "javascriptreact"
+  ],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": false,
+  "editor.codeActionsOnSave": {
+    "source.formatDocument": true,
+    "source.fixAll.eslint": true
+  },
+  "[markdown]": {
+    "editor.formatOnSave": true,
+    "editor.acceptSuggestionOnEnter": "off"
+  },
+  "files.associations": {
+    "*.jsx": "JavaScript React",
+    "*.js": "javascriptreact"
+  }
 }

@@ -1,14 +1,25 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import {SafeAreaView} from 'react-native';
-import ThemeProvider from './src/theme/ThemeProvider';
-import {Button} from './src';
+
+import {I18nextProvider} from 'react-i18next';
+
+import {ThemeProvider, SnackBar} from '@digitaltitransversal';
+import {AppProvider} from '@sas/context';
+import {RootNavigation} from '@sas/navigation/root-navigation';
+
+import i18n from './services/i18n';
 
 const App = () => {
   return (
     <ThemeProvider>
-      <SafeAreaView>
-        <Button text="Hola ironhackers" onPress={() => console.log('spin')} />
+      <SafeAreaView style={{flex: 1}}>
+        <I18nextProvider i18n={i18n}>
+          <SnackBar.Component />
+          <AppProvider>
+            <RootNavigation />
+          </AppProvider>
+        </I18nextProvider>
       </SafeAreaView>
     </ThemeProvider>
   );

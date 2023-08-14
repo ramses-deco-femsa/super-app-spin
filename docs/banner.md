@@ -44,8 +44,8 @@ import * as React, { useState } from 'react';
 import { Alert } from 'react-native';
 import { Banner } from '@digitaltitransversal/tr_superapp_theme';
 
-const vix = require('../src/assets/vix.png');
-const vips = require('../src/assets/vips.png');
+const vix = require('../src/ui/assets/vix.png');
+const vips = require('../src/ui/assets/vips.png');
 const banners = [
   {
     id: 1,
